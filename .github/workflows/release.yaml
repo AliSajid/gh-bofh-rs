@@ -28,8 +28,7 @@ jobs:
         strategy:
             matrix:
                 bin:
-                    - bfkview
-                    - bfkrun
+                    - gh-bofh
                 build:
                     # alphabatized by target
                     - os: macOS-latest
