@@ -48,22 +48,53 @@
 // * SOFTWARE.
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
 
-mod cli;
+// CLI Specification for clap
 
-use clap::Parser;
-use cli::{
-    Cli,
-    ExcuseType,
-};
-use gh_bofh_lib::{
-    random_classic,
-    random_modern,
+use clap::{
+    arg,
+    Parser,
+    ValueEnum,
 };
 
-fn main() {
-    let args = Cli::parse();
-    match args.excuse_type {
-        ExcuseType::Classic => println!("{}", random_classic()),
-        ExcuseType::Modern => println!("{}", random_modern()),
-    }
+#[derive(Debug, Clone, Copy, ValueEnum)]
+pub enum ExcuseType {
+    Classic,
+    Modern,
+}
+
+#[derive(Parser, Debug)]
+#[command(
+    author,
+    version,
+    about,
+    long_about = "Generates a random BOFH excuse. The excuse type can be specified with the \
+                  -t/--type flag. The default is classic, which generates a 90s style BOFH \
+                  excuse. You can also specify modern, which generates a more modern BOFH excuse."
+)]
+pub struct Cli {
+    /// The type of excuse to generate: classic or modern
+    ///
+    /// The default is classic, which generates a 90s style BOFH excuse. You can
+    /// also specify modern, which generates a more modern BOFH excuse.
+    #[clap(
+        short = 't',
+        long = "type",
+        default_value = "classic",
+        env = "EXCUSE_TYPE",
+        value_name = "TYPE"
+    )]
+    #[arg(value_enum, group = "type")]
+    pub excuse_type: ExcuseType,
+
+    /// Generate a classic BOFH excuse
+    ///
+    /// Generates a 90s style BOFH excuse.
+    #[arg(short = 'c', long = "classic", group = "type")]
+    pub classic: bool,
+
+    /// Generate a modern BOFH excuse
+    ///
+    /// Generates a more modern BOFH excuse.
+    #[arg(short = 'm', long = "modern", group = "type")]
+    pub modern: bool,
 }
