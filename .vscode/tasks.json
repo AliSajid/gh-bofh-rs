@@ -1,0 +1,66 @@
+{
+    "presentation": {
+        "clear": true
+    },
+    "problemMatcher": "$rustc",
+    "tasks": [
+        {
+            "command": "cargo test --all-targets",
+            "group": {
+                "isDefault": true,
+                "kind": "build"
+            },
+            "label": "build"
+        },
+        {
+            "command": "cargo doc --no-deps --open",
+            "label": "help"
+        },
+        {
+            "command": "cargo build --package gh-bofh-rs --bin gh-bofh",
+            "label": "cargo build --package gh-bofh-rs --bin gh-bofh",
+            "presentation": {
+                "clear": true,
+                "panel": "shared",
+                "reveal": "always"
+            }
+        },
+        {
+            "command": "cargo build --package gh-bofh-rs --bin gh-bofh --release",
+            "label": "cargo build --package gh-bofh-rs --bin gh-bofh --release",
+            "presentation": {
+                "clear": true,
+                "panel": "shared",
+                "reveal": "always"
+            }
+        },
+        {
+            "label": "open repository (gh-bofh-rs)",
+            "linux": {
+                "command": "xdg-open      \"https://github.com/AliSajid/gh-bofh-rs\""
+            },
+            "osx": {
+                "command": "open          \"https://github.com/AliSajid/gh-bofh-rs\""
+            },
+            "presentation": {
+                "clear": true,
+                "panel": "shared",
+                "reveal": "silent"
+            },
+            "windows": {
+                "command": "start \"\"    \"https://github.com/AliSajid/gh-bofh-rs\""
+            }
+        },
+        {
+            "command": "bacon",
+            "group": {
+                "isDefault": true,
+                "kind": "build"
+            },
+            "label": "Run bacon",
+            "type": "shell"
+        }
+    ],
+    "type": "shell",
+    "version": "2.0.0"
+}

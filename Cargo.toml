@@ -1,6 +1,6 @@
 [package]
 name = "gh-bofh-rs"
-version = "1.0.0-alpha.1"
+version = "1.0.0-next.1"
 edition = "2021"
 readme = "README.md"
 description = ""
@@ -9,15 +9,16 @@ repository = "https://github.com/AliSajid/gh-bofh-rs"
 license = "MIT OR Apache-2.0"
 
 [lib]
-name = "gh_bofh_rs_lib"
-path = "src/gh_bofh_rs_lib/lib.rs"
+name = "gh_bofh_lib"
+path = "src/gh_bofh_lib/lib.rs"
 crate-type = ["lib"]
 
 [[bin]]
-name = "gh-bofh-rs"
-path = "src/gh_bofh_rs/main.rs"
+name = "gh-bofh"
+path = "src/gh_bofh/main.rs"
 
 [dependencies]
+clap = { version = "4.4.18", features = ["cargo", "debug", "env", "string", "unicode", "derive"] }
 
 
 [profile.dev]
