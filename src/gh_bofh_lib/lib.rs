@@ -94,7 +94,7 @@ pub fn random_classic() -> ClassicExcuse {
 pub fn random_modern() -> ModernExcuse {
     MODERN
         .choose(&mut rand::thread_rng())
-        .unwrap_or(&"Excuse engine not initialized")
+        .unwrap_or(&"Excuse engine not initialized. Please try again later.")
 }
 
 #[cfg(test)]
