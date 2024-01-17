@@ -537,7 +537,7 @@ pub static CLASSIC: &[&str; 466] = &[
     "Your machine had the fuses in backwards.",
 ];
 
-pub static MODERN: &[&str; 97] = &[
+pub static MODERN: &[&str; 98] = &[
     "Predictive analytics model failed to foresee this error",
     "AI heuristic malfunction",
     "Cryptocurrency mining drained system resources",
@@ -636,4 +636,5 @@ pub static MODERN: &[&str; 97] = &[
     "Data pipeline froze due to Polar Vortex",
     "Someone spilled machine oil on the cloud",
     "A rogue AI bot swiped left, servers no longer responding",
+    "The cloud server is down, but we don't know why",
 ];
