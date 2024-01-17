@@ -1,3 +1,10 @@
+## [1.0.0-next.4](https://github.com/AliSajid/gh-bofh-rs/compare/v1.0.0-next.3...v1.0.0-next.4) (2024-01-17)
+
+
+### Features
+
+* add more modern excuses ([d084ad0](https://github.com/AliSajid/gh-bofh-rs/commit/d084ad02a227d7cc77130e8179a73cdde54a9269))
+
 ## [1.0.0-next.3](https://github.com/AliSajid/gh-bofh-rs/compare/v1.0.0-next.2...v1.0.0-next.3) (2024-01-17)
 
 
