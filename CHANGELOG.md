@@ -1,3 +1,10 @@
+## [1.0.0-next.3](https://github.com/AliSajid/gh-bofh-rs/compare/v1.0.0-next.2...v1.0.0-next.3) (2024-01-17)
+
+
+### Features
+
+* update the error line in modern ([911f262](https://github.com/AliSajid/gh-bofh-rs/commit/911f262f25962ca9c6dce311c2d9d65d2b3a8bee))
+
 ## [1.0.0-next.2](https://github.com/AliSajid/gh-bofh-rs/compare/v1.0.0-next.1...v1.0.0-next.2) (2024-01-17)
 
 
