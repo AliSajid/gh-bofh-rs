@@ -3201,7 +3201,7 @@
                         "uses_default_features": true
                     }
                 ],
-                "description": "",
+                "description": "A Rust implementation of the classic `bofh` command as a GitHub CLI extension.",
                 "documentation": null,
                 "edition": "2021",
                 "features": {},
@@ -7696,7 +7696,7 @@
                                 "uses_default_features": true
                             }
                         ],
-                        "description": "",
+                        "description": "A Rust implementation of the classic `bofh` command as a GitHub CLI extension.",
                         "documentation": null,
                         "edition": "2021",
                         "features": {},
