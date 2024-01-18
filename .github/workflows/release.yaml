@@ -135,13 +135,13 @@ jobs:
             - name: Prepare GitHub Release artifacts
               run: |
                 mkdir dist/
-                mv -v artifacts/aarch64-apple-darwin/gh-bofh-aarch64-apple-darwin dist/
-                mv -v artifacts/aarch64-unknown-linux-gnu/gh-bofh-aarch64-unknown-linux-gnu dist/
-                mv -v artifacts/i686-unknown-linux-gnu/gh-bofh-i686-unknown-linux-gnu dist/
-                mv -v artifacts/x86_64-apple-darwin/gh-bofh-x86_64-apple-darwin dist/
-                mv -v artifacts/x86_64-unknown-linux-gnu/gh-bofh-x86_64-unknown-linux-gnu dist/
-                mv -v artifacts/x86_64-pc-windows-gnu/gh-bofh-x86_64-pc-windows-gnu dist/
-                mv -v artifacts/i686-pc-windows-gnu/gh-bofh-i686-pc-windows-gnu dist/
+                cp -vr artifacts/aarch64-apple-darwin/gh-bofh-aarch64-apple-darwin dist/aarch64-apple-darwin/
+                cp -vr artifacts/aarch64-unknown-linux-gnu/gh-bofh-aarch64-unknown-linux-gnu dist/aarch64-unknown-linux-gnu/
+                cp -vr artifacts/i686-unknown-linux-gnu/gh-bofh-i686-unknown-linux-gnu dist/i686-unknown-linux-gnu/
+                cp -vr artifacts/x86_64-apple-darwin/gh-bofh-x86_64-apple-darwin dist/x86_64-apple-darwin/
+                cp -vr artifacts/x86_64-unknown-linux-gnu/gh-bofh-x86_64-unknown-linux-gnu dist/x86_64-unknown-linux-gnu/
+                cp -vr artifacts/x86_64-pc-windows-gnu/gh-bofh-x86_64-pc-windows-gnu dist/x86_64-pc-windows-gnu/
+                cp -vr artifacts/i686-pc-windows-gnu/gh-bofh-i686-pc-windows-gnu dist/i686-pc-windows-gnu/
             - name: Combine checksums
               run: cat dist/**/*-SHA256SUM.txt | tee dist/SHA256SUMS.txt
             - name: Install Conventional Commit preset
@@ -163,5 +163,6 @@ jobs:
               uses: cli/gh-extension-precompile@v1
               with:
                 build_script_override: "scripts/build.sh"
+                release_tag: ${{steps.semantic.outputs.new_release_version}}
               env:
                 RELEASE_VERSION: ${{steps.semantic.outputs.new_release_version}}
