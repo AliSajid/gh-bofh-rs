@@ -115,7 +115,7 @@ dependencies = [
 
 [[package]]
 name = "gh-bofh-rs"
-version = "1.0.0-next.5"
+version = "1.0.0-next.6"
 dependencies = [
  "clap",
  "rand",
