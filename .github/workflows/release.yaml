@@ -164,5 +164,6 @@ jobs:
               with:
                 build_script_override: "scripts/build.sh"
                 release_tag: ${{steps.semantic.outputs.new_release_version}}
+                github_token: ${{secrets.ACTIONS_PAT_GITHUB}}
               env:
                 RELEASE_VERSION: ${{steps.semantic.outputs.new_release_version}}
