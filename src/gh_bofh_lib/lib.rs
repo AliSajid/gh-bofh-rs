@@ -50,13 +50,12 @@
 mod excuses;
 
 use excuses::{
+    ClassicExcuse,
+    ModernExcuse,
     CLASSIC,
     MODERN,
 };
 use rand::seq::SliceRandom;
-
-type ClassicExcuse = &'static str;
-type ModernExcuse = &'static str;
 
 /// Returns a random classic excuse
 ///
