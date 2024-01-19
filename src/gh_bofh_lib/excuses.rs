@@ -47,7 +47,7 @@
 //   THE
 // * SOFTWARE.
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
-pub const CLASSIC: [&str; 466] = [
+pub const CLASSIC: [&str; 467] = [
     "clock speed",
     "solar flares",
     "electromagnetic radiation from satellite debris",
@@ -182,6 +182,7 @@ pub const CLASSIC: [&str; 466] = [
     "new management",
     "telnet: Unable to connect to remote host: Connection refused",
     "SCSI Chain overterminated",
+    "Couldn't fit a packet through on the FDDI ring",
     "It's not plugged in.",
     "because of network lag due to too many people playing deathmatch",
     "You put the disk in upside down.",
