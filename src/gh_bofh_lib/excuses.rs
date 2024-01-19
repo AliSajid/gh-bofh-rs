@@ -645,3 +645,6 @@ pub const MODERN: [&str; 105] = [
     "Data lake is polluted with toxic data",
     "iCloud is raining on the server",
 ];
+
+pub type ClassicExcuse = &'static str;
+pub type ModernExcuse = &'static str;
