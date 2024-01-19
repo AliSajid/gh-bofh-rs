@@ -47,7 +47,7 @@
 //   THE
 // * SOFTWARE.
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
-pub static CLASSIC: &[&str; 466] = &[
+pub const CLASSIC: [&str; 466] = [
     "clock speed",
     "solar flares",
     "electromagnetic radiation from satellite debris",
@@ -537,7 +537,7 @@ pub static CLASSIC: &[&str; 466] = &[
     "Your machine had the fuses in backwards.",
 ];
 
-pub static MODERN: &[&str; 105] = &[
+pub const MODERN: [&str; 105] = [
     "Predictive analytics model failed to foresee this error",
     "AI heuristic malfunction",
     "Cryptocurrency mining drained system resources",
