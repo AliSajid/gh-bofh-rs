@@ -36,6 +36,26 @@
 ### Bug Fixes
 
 * add explcit types in tests ([47ea45f](https://github.com/AliSajid/gh-bofh-rs/commit/47ea45f6267ea899991488244a1585f75ac22f0c))
+* reomove unnecessary redirection of borrows ([19e451d](https://github.com/AliSajid/gh-bofh-rs/commit/19e451d43b54c16400171ec30ad3ea63a168548f))
+
+## [1.0.0-next.6](https://github.com/AliSajid/gh-bofh-rs/compare/v1.0.0-next.5...v1.0.0-next.6) (2024-01-19)
+
+
+### Features
+
+* add a modern excuse ([955fe17](https://github.com/AliSajid/gh-bofh-rs/commit/955fe1703a681947d6697a99aad3201cebe2f4ba))
+* add a modern excuse ([8ce9f2d](https://github.com/AliSajid/gh-bofh-rs/commit/8ce9f2d40cf029c2e5d6bf828cd84c87f2ad90f2))
+* add a modern excuse ([274c940](https://github.com/AliSajid/gh-bofh-rs/commit/274c940f2dde48baf4ba4dd9de136ed098b2c137))
+* add another modern excuse ([9a79979](https://github.com/AliSajid/gh-bofh-rs/commit/9a79979d70b0bc83cdf73da6b222d0f5346f4979))
+* add another modern excuse ([9b8ab43](https://github.com/AliSajid/gh-bofh-rs/commit/9b8ab43d811339908f08ef1f9b5992e9536e1750))
+* add more modern excuses ([f2622dd](https://github.com/AliSajid/gh-bofh-rs/commit/f2622dd7af052ec7816394d5c179ea02d4bb5365))
+* add one more modern excuse ([be5faf1](https://github.com/AliSajid/gh-bofh-rs/commit/be5faf12de88b683633791e6255c4248f813d6ac))
+* update the error line in modern ([3447879](https://github.com/AliSajid/gh-bofh-rs/commit/3447879730b23be9707de38fc5adfda5f7f01310))
+
+
+### Bug Fixes
+
+* add explcit types in tests ([47ea45f](https://github.com/AliSajid/gh-bofh-rs/commit/47ea45f6267ea899991488244a1585f75ac22f0c))
 
 ## [1.0.0-next.6](https://github.com/AliSajid/gh-bofh-rs/compare/v1.0.0-next.5...v1.0.0-next.6) (2024-01-19)
 
