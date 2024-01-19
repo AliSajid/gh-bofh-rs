@@ -26,7 +26,11 @@ opt-level = 1
 debug = true
 
 [profile.release]
-opt-level = 3
-strip = true
-lto = true
-codegen-units = 1
+opt-level = 'z'   # Optimize for size.
+lto = true        # Enable Link Time Optimisation
+codegen-units = 1 # Reduced to increase optimisations.
+panic = 'abort'   # Abort on panic
+strip = "symbols" # Strip symbols from binary
+
+[dev-dependencies]
+rstest = "0.18.2"
