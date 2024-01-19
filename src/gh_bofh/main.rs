@@ -61,8 +61,8 @@ use gh_bofh_lib::{
 };
 
 fn main() {
-    let args = Cli::parse();
-    match args.excuse_type {
+    let arguments = Cli::parse();
+    match arguments.excuse_type {
         ExcuseType::Classic => println!("{}", random_classic()),
         ExcuseType::Modern => println!("{}", random_modern()),
     }
