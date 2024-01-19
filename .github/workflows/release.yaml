@@ -129,7 +129,7 @@ jobs:
                 trust_level: 5
                 git_user_signingkey: true
                 git_commit_gpgsign: true
-                git_tag_gpgsign: true
+                git_tag_gpgsign: false
                 git_committer_name: ${{ vars.GIT_AUTHOR_NAME }}
                 git_committer_email: ${{ vars.GIT_AUTHOR_EMAIL }}
             - name: Test GPG Key Import
