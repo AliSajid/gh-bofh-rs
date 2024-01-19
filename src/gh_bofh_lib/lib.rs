@@ -65,13 +65,13 @@ type ModernExcuse = &'static str;
 /// # Examples
 ///
 /// ```
-/// use gh_bofh_lib::random_classic_excuse;
+/// use gh_bofh_lib::random_classic;
 ///
-/// let excuse = random_classic_excuse();
+/// let excuse = random_classic();
 /// println!("{}", excuse);
 /// ```
 #[must_use]
-pub fn random_classic_excuse() -> ClassicExcuse {
+pub fn random_classic() -> ClassicExcuse {
     CLASSIC
         .choose(&mut rand::thread_rng())
         .unwrap_or(&"No excuse found, try again later")
@@ -84,14 +84,14 @@ pub fn random_classic_excuse() -> ClassicExcuse {
 /// # Examples
 ///
 /// ```
-/// use gh_bofh_lib::random_modern_excuse;
+/// use gh_bofh_lib::random_modern;
 ///
-/// let excuse = random_modern_excuse();
+/// let excuse = random_modern();
 ///
 /// println!("{}", excuse);
 /// ```
 #[must_use]
-pub fn random_modern_excuse() -> ModernExcuse {
+pub fn random_modern() -> ModernExcuse {
     MODERN
         .choose(&mut rand::thread_rng())
         .unwrap_or(&"Excuse engine not initialized. Please try again later.")
@@ -103,13 +103,13 @@ mod tests {
 
     #[test]
     fn test_random_classic() {
-        let excuse: ClassicExcuse = random_classic_excuse();
+        let excuse: ClassicExcuse = random_classic();
         assert_ne!(excuse, "No excuse found, try again later");
     }
 
     #[test]
     fn test_random_modern() {
-        let excuse: ModernExcuse = random_modern_excuse();
+        let excuse: ModernExcuse = random_modern();
         assert_ne!(excuse, "Excuse engine not initialized");
     }
 }
