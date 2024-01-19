@@ -9,7 +9,7 @@ on:
             - closed
     workflow_dispatch:
 concurrency:
-    group: CI
+    group: CI-Merged
 env:
     GIST_KEY: 68f75dde24f65f2a9333a4ca3d38c82b # pragma: allowlist secret
     RUST_BACKTRACE: 1
