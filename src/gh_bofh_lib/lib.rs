@@ -103,13 +103,13 @@ mod tests {
 
     #[test]
     fn test_random_classic() {
-        let excuse = random_classic();
+        let excuse: ClassicExcuse = random_classic();
         assert_ne!(excuse, "No excuse found, try again later");
     }
 
     #[test]
     fn test_random_modern() {
-        let excuse = random_modern();
+        let excuse: ModernExcuse = random_modern();
         assert_ne!(excuse, "Excuse engine not initialized");
     }
 }
