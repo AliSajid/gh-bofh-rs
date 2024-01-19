@@ -9,6 +9,21 @@
 ### Bug Fixes
 
 * fix names in doc tests ([71b4fe5](https://github.com/AliSajid/gh-bofh-rs/commit/71b4fe56d816167cddf4254a1335b9f9a98ea996))
+* fix the correct renames ([9ba8de1](https://github.com/AliSajid/gh-bofh-rs/commit/9ba8de1f081db43021d9e506f8eb727dc22becc6))
+* rename for more descriptive variables ([0693de0](https://github.com/AliSajid/gh-bofh-rs/commit/0693de0c385eb145c9fa01e24ba2ac731986760e))
+* rename the arguments variable ([d086ea4](https://github.com/AliSajid/gh-bofh-rs/commit/d086ea40f24104bc395a26d48ed73ec751e06b91))
+
+## [1.0.0-next.7](https://github.com/AliSajid/gh-bofh-rs/compare/v1.0.0-next.6...v1.0.0-next.7) (2024-01-19)
+
+
+### Features
+
+* bump version ([a098757](https://github.com/AliSajid/gh-bofh-rs/commit/a0987574603ee3ce86857226e222a45d7293f221))
+
+
+### Bug Fixes
+
+* fix names in doc tests ([71b4fe5](https://github.com/AliSajid/gh-bofh-rs/commit/71b4fe56d816167cddf4254a1335b9f9a98ea996))
 * rename for more descriptive variables ([0693de0](https://github.com/AliSajid/gh-bofh-rs/commit/0693de0c385eb145c9fa01e24ba2ac731986760e))
 * rename the arguments variable ([d086ea4](https://github.com/AliSajid/gh-bofh-rs/commit/d086ea40f24104bc395a26d48ed73ec751e06b91))
 
