@@ -71,7 +71,7 @@ type ModernExcuse = &'static str;
 /// println!("{}", excuse);
 /// ```
 #[must_use]
-pub fn random_classic() -> ClassicExcuse {
+pub fn random_classic_excuse() -> ClassicExcuse {
     CLASSIC
         .choose(&mut rand::thread_rng())
         .unwrap_or(&"No excuse found, try again later")
@@ -91,7 +91,7 @@ pub fn random_classic() -> ClassicExcuse {
 /// println!("{}", excuse);
 /// ```
 #[must_use]
-pub fn random_modern() -> ModernExcuse {
+pub fn random_modern_excuse() -> ModernExcuse {
     MODERN
         .choose(&mut rand::thread_rng())
         .unwrap_or(&"Excuse engine not initialized. Please try again later.")
@@ -103,13 +103,13 @@ mod tests {
 
     #[test]
     fn test_random_classic() {
-        let excuse: ClassicExcuse = random_classic();
+        let excuse: ClassicExcuse = random_classic_excuse();
         assert_ne!(excuse, "No excuse found, try again later");
     }
 
     #[test]
     fn test_random_modern() {
-        let excuse: ModernExcuse = random_modern();
+        let excuse: ModernExcuse = random_modern_excuse();
         assert_ne!(excuse, "Excuse engine not initialized");
     }
 }
