@@ -120,6 +120,20 @@ jobs:
               with:
                 fetch-depth: 0
                 persist-credentials: false
+            - name: Import GPG key
+              uses: crazy-max/ghaction-import-gpg@v6
+              with:
+                gpg_private_key: ${{ secrets.GPG_PRIVATE_KEY }}
+                passphrase: ${{ secrets.GPG_KEY_PASSPHRASE }}
+                fingerprint: "E9A645792F93A4AC64E3025F30147AA3515A2E41" # pragma: allowlist secret
+                trust_level: 5
+                git_user_signingkey: true
+                git_commit_gpgsign: true
+                git_tag_gpgsign: true
+                git_committer_name: ${{ vars.GIT_AUTHOR_NAME }}
+                git_committer_email: ${{ vars.GIT_AUTHOR_EMAIL }}
+            - name: Test GPG Key Import
+              run: gpg --list-keys --keyid-format LONG
             - name: Install dependencies
               run: sudo apt install tree
             - name: Install semantic-release-cargo
@@ -150,7 +164,7 @@ jobs:
               uses: cycjimmy/semantic-release-action@61680d0e9b02ff86f5648ade99e01be17f0260a4 # v4.0.0
               id: semantic
               with:
-                semantic_version: 22.0.3
+                semantic_version: 22.0.12
                 extra_plugins: |
                     @semantic-release/exec@6
                     @semantic-release/git@10
