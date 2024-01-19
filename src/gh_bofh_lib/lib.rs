@@ -65,9 +65,9 @@ type ModernExcuse = &'static str;
 /// # Examples
 ///
 /// ```
-/// use gh_bofh_lib::random_classic;
+/// use gh_bofh_lib::random_classic_excuse;
 ///
-/// let excuse = random_classic();
+/// let excuse = random_classic_excuse();
 /// println!("{}", excuse);
 /// ```
 #[must_use]
@@ -84,9 +84,9 @@ pub fn random_classic_excuse() -> ClassicExcuse {
 /// # Examples
 ///
 /// ```
-/// use gh_bofh_lib::random_modern;
+/// use gh_bofh_lib::random_modern_excuse;
 ///
-/// let excuse = random_modern();
+/// let excuse = random_modern_excuse();
 ///
 /// println!("{}", excuse);
 /// ```
