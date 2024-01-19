@@ -1,2 +1,3 @@
 .secrets.baseline:generic-api-key:121
 .github/workflows/ci.yaml:generic-api-key:16
+.github/workflows/ci-merged.yaml:generic-api-key:14

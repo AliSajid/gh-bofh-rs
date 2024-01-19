@@ -1,10 +1,12 @@
 ---
 name: Continuous integration
 on:
-    push:
-        branches-ignore:
-            - 'main'
-            - 'next'
+    pull_request:
+        branches:
+            - main
+            - next
+        types:
+            - closed
     workflow_dispatch:
 concurrency:
     group: CI
@@ -16,6 +18,7 @@ env:
 jobs:
     ci:
         runs-on: ${{matrix.os}}-latest
+        if: github.event.pull_request.merged == true
         outputs:
             result: ${{steps.result.outputs.result}}
         strategy:
