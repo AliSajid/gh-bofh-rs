@@ -1,3 +1,11 @@
+## [1.1.0](https://github.com/AliSajid/gh-bofh-rs/compare/v1.0.0...v1.1.0) (2024-03-28)
+
+
+### Features
+
+* fix versioning on semantic-release x2 ([9631ffe](https://github.com/AliSajid/gh-bofh-rs/commit/9631ffe2751e9f2c5c06451c56769037a65b0771))
+* fix versioning on semantic-release x3 ([b05989f](https://github.com/AliSajid/gh-bofh-rs/commit/b05989fad34d0b2da9a5638be84095ff8a4f7893))
+
 ## 1.0.0 (2024-03-28)
 
 
