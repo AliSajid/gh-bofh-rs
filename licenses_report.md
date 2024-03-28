@@ -433,7 +433,7 @@ Apache License 2.0
 
 #### Used by
 
-- [gh-bofh-rs]( https://github.com/AliSajid/gh-bofh-rs ) 1.1.0-next.1
+- [gh-bofh-rs]( https://github.com/AliSajid/gh-bofh-rs ) 1.1.0
 
 #### License
 
@@ -3196,7 +3196,6 @@ Apache License 2.0
 #### Used by
 
 - [relative-path]( https://github.com/udoprog/relative-path ) 1.9.2
-- [rstest]( https://github.com/la10736/rstest ) 0.18.2
 - [rstest_macros]( https://github.com/la10736/rstest ) 0.18.2
 
 #### License
@@ -3276,6 +3275,32 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 
+```
+
+### Apache-2.0
+
+Apache License 2.0
+
+#### Used by
+
+- [rstest]( https://github.com/la10736/rstest ) 0.18.2
+
+#### License
+
+```text
+Copyright 2018-19 Michele d'Amico
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
 ```
 
 ### MIT
