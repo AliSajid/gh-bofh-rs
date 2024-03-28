@@ -123,6 +123,7 @@ repos:
       rev: 0.6.3
       hooks:
         - id: fix-smartquotes
+          exclude: "licenses.*"
         - id: fix-ligatures
         - id: forbid-bidi-controls
     - repo: https://github.com/zricethezav/gitleaks
