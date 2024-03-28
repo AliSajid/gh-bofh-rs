@@ -1,3 +1,8 @@
+# SPDX-FileCopyrightText: 2024 Ali Sajid Imami
+#
+# SPDX-License-Identifier: Apache-2.0
+# SPDX-License-Identifier: MIT
+
 # This is the default config used by nextest. It is embedded in the binary at
 # build time. It may be used as a template for .config/nextest.toml.
 
