@@ -1,0 +1,153 @@
+# SPDX-FileCopyrightText: 2023 - 2024 Ali Sajid Imami
+#
+# SPDX-License-Identifier: Apache-2.0
+# SPDX-License-Identifier: MIT
+
+---
+name: Docker Image Generation
+on:
+  workflow_call:
+  workflow_dispatch:
+  release:
+    types:
+      - created
+      - published
+      - prereleased
+
+concurrency:
+  group: docker
+  cancel-in-progress: false
+env:
+  DOCKER_USERNAME: ${{ vars.DOCKER_USERNAME }}
+  DOCKER_REPOSITORY_NAME: ${{ vars.DOCKER_REPOSITORY_NAME }}
+  REPOSITORY_NAME: ${{ github.event.repository.name }}
+  COSIGN_RELEASE_VERSION: v2.2.3
+  SOURCE_DATE_EPOCH: 0
+jobs:
+    docker-build-push:
+        runs-on: ubuntu-latest
+        permissions:
+          id-token: write
+          packages: write
+        steps:
+            - name: Checkout
+              uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
+            - name: Get Last Commit Date/Time for reproducible builds
+              run: echo "SOURCE_DATE_EPOCH=$(git log -1 --pretty=%ct)" >> $GITHUB_ENV
+            - name: Generate Docker Metadata
+              id: meta
+              uses: docker/metadata-action@8e5442c4ef9f78752691e2d8f8d19755c6f78e81 # v5.5.1
+              with:
+                  images: |
+                    ${{env.DOCKER_REPOSITORY_NAME}}/${{env.REPOSITORY_NAME}}
+                    ghcr.io/${{ github.repository}}
+                  tags: |
+                    type=ref,event=branch
+                    type=ref,event=pr
+                    type=ref,event=tag
+                    type=semver,pattern={{version}}
+                    type=semver,pattern={{major}}.{{minor}}
+                    type=semver,pattern={{major}}
+                    type=sha
+                  labels: |
+                    org.opencontainers.image.licenses="MIT AND Apache-2.0"
+            - name: Debug Metadata
+              run: echo "${{ steps.meta.outputs.json }}"
+            - name: Setup Buildx
+              id: buildx
+              uses: docker/setup-buildx-action@2b51285047da1547ffb1b2203d8be4c0af6b1f20 # v3.2.0
+              with:
+                install: true
+                buildkitd-flags: --debug
+            - name: Set up cache for Docker Layers
+              uses: actions/cache@0c45773b623bea8c8e75f6c82b208c3cf94ea4f9 # v4.0.2
+              with:
+                path: /tmp/.buildx-cache
+                key: ${{ runner.os }}-multi-buildx-${{ github.sha }}
+                restore-keys: |
+                  ${{ runner.os }}-multi-buildx
+            # - name: Setup QEMU
+            #   uses: docker/setup-qemu-action@68827325e0b33c7199eb31dd4e31fbe9023e06e3 # v3.0.0
+            #   # with:
+            #   #   platforms: aarch64,linux/arm64,linux/amd64
+            - name: Login to DockerHub
+              uses: docker/login-action@e92390c5fb421da1463c202d546fed0ec5c39f20 # v3.1.0
+              with:
+                  username: ${{ env.DOCKER_USERNAME }}
+                  password: ${{ secrets.DOCKER_TOKEN }}
+            - name: Login to GitHub Container Registry
+              uses: docker/login-action@e92390c5fb421da1463c202d546fed0ec5c39f20 # v3.1.0
+              with:
+                  registry: ghcr.io
+                  username: ${{ github.actor }}
+                  password: ${{ secrets.GHCR_TOKEN }}
+            - name: Build and Push Docker Images
+              id: build
+              uses: docker/build-push-action@2cdde995de11925a030ce8070c3d77a52ffcf1c0 # v5.3.0
+              env:
+                SOURCE_DATE_EPOCH: ${{ env.SOURCE_DATE_EPOCH }}
+              with:
+                  context: .
+                  builder: ${{ steps.buildx.outputs.name }}
+                  file: ./Dockerfile
+                  push: true
+                  provenance: true
+                  annotations: ${{ steps.meta.outputs.annotations }}
+                  tags: ${{ steps.meta.outputs.tags }}
+                  labels: ${{ steps.meta.outputs.labels }}
+                  platforms: linux/amd64,linux/arm64
+                  cache-from: type=local,src=/tmp/.buildx-cache
+                  cache-to: type=local,mode=max,dest=/tmp/.buildx-cache-new
+            - name: Debug Build
+              run: echo "${{join(steps.build.outputs.*, '\n')}}"
+            - name: Install cosign
+              uses: sigstore/cosign-installer@e1523de7571e31dbe865fd2e80c5c7c23ae71eb4 # v3.4.0
+              with:
+                cosign-release: ${{ env.COSIGN_RELEASE_VERSION }}
+            - name: Install Syft
+              uses: anchore/sbom-action/download-syft@9fece9e20048ca9590af301449208b2b8861333b # v0.15.9
+              with:
+                syft-version: v1.0.1
+            - name: Sign and Push
+              env:
+                IMAGE_DIGEST: ${{ steps.build.outputs.digest }}
+                IMAGE_TAGS: ${{ steps.meta.outputs.tags }}
+                GITHUB_TOKEN: ${{ github.token }}
+                SOURCE_DATE_EPOCH: ${{ env.SOURCE_DATE_EPOCH }}
+              run: |
+                for tag in ${IMAGE_TAGS}; do
+                  image="${tag}@${IMAGE_DIGEST}"
+                  original_name="sbom-${tag}.json"
+                  sanitized_name=$(echo "$original_name" | sed 's|[/:]|_|g' | tr '_-' '-_')
+                  echo "Signing the image: ${image}"
+                  echo "Using the original name: $original_name"
+                  echo "Using the sanitized name: $sanitized_name"
+                  echo "Signing and pushing ${tag}@${IMAGE_DIGEST}"
+                  cosign sign --yes ${image}
+                  echo "Generating Software Bill of Materials for ${image}"
+                  syft ${image} -o spdx-json=${sanitized_name} -v
+                  echo "Attesting the Software Bill of Materials for ${image}"
+                  cosign attest --type=spdxjson --yes --predicate ${sanitized_name} ${image}
+                  echo "Done signing and pushing ${tag}@${IMAGE_DIGEST} with SBOM"
+                done
+              shell: bash
+            - name: Move cache
+              run: |
+                rm -rf /tmp/.buildx-cache
+                mv /tmp/.buildx-cache-new /tmp/.buildx-cache
+            # - name: Verify Signatures
+            #   env:
+            #     IMAGE_DIGEST: ${{ steps.build.outputs.digest }}
+            #     IMAGE_TAGS: ${{ steps.meta.outputs.tags }}
+            #     GITHUB_TOKEN: ${{ github.token }}
+            #     SOURCE_DATE_EPOCH: ${{ env.SOURCE_DATE_EPOCH }}
+            #   run: |
+            #     for tag in ${IMAGE_TAGS}; do
+            #       image="${tag}@${IMAGE_DIGEST}"
+            #       echo "Verifying ${image}"
+            #       cosign verify ${image} --certificate-identity-regexp="${{vars.COSIGN_CERTIFICATE_IDENTITY}}" --certificate-oidc-issuer-regexp="${{vars.COSIGN_CERTIFICATE_OIDC_ISSUER}}"
+            #       echo "Verifying SBOM Attestation for ${image}"
+            #       cosign verify-attestation ${image} --type=spdxjson --certificate-identity-regexp="${{vars.COSIGN_CERTIFICATE_IDENTITY}}" --certificate-oidc-issuer-regexp="${{vars.COSIGN_CERTIFICATE_OIDC_ISSUER}}"
+            #       echo "Done verifying ${image}"
+            #     done
+            #   shell: bash

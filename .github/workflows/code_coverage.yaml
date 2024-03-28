@@ -1,3 +1,8 @@
+# SPDX-FileCopyrightText: 2023 - 2024 Ali Sajid Imami
+#
+# SPDX-License-Identifier: Apache-2.0
+# SPDX-License-Identifier: MIT
+
 ---
 name: Code Coverage
 on:
@@ -11,21 +16,23 @@ jobs:
             options: --security-opt seccomp=unconfined
         steps:
             - name: Checkout repository
-              uses: actions/checkout@v3
+              uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
             # Nightly Rust is required for cargo llvm-cov --doc.
             - uses: dtolnay/rust-toolchain@nightly
               with:
                 components: llvm-tools-preview
-            - uses: taiki-e/install-action@cargo-llvm-cov
-            - uses: taiki-e/install-action@nextest
+            - uses: taiki-e/install-action@f03bd5e420b56953c9c6d492f25b1bdeed9c5aec # v2.29.1
+              with:
+                tool: cargo-llvm-cov,nextest
             - name: Collect coverage data (including doctests)
               run: |
                 cargo llvm-cov --no-report nextest --config-file nextest.toml
                 cargo llvm-cov --no-report --doc
                 cargo llvm-cov report --doctests --lcov --output-path lcov.info
             - name: Upload to codecov.io
-              uses: codecov/codecov-action@v3
+              uses: codecov/codecov-action@54bcd8715eee62d40e33596ef5e8f0f48dbbccab # v4.1.0
               with:
                 file: lcov.info
-              env:
-                CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
+                token: ${{ secrets.CODECOV_TOKEN }}
+                verbose: true
+                working-directory: .
