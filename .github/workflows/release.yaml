@@ -85,18 +85,12 @@ jobs:
               run: |
                 mkdir dist
                 cp target/${{ matrix.build.target }}/release/${{ matrix.bin }} dist/${{ matrix.bin }}-${{ matrix.build.target }}
-            - name: Create binary checksum
-              run: |
-                shasum --algorithm 256 \
-                --binary ${{ matrix.bin }}-${{ matrix.build.target }} | tee ${{ matrix.bin }}-${{ matrix.build.target }}-SHA256SUM.txt
-              working-directory: ./dist
             - name: Upload release artifacts
               uses: actions/upload-artifact@5d5d22a31266ced268874388b861e4b58bb5c2f3 # v4.3.1
               with:
                 name: ${{ matrix.build.target }}
                 path: |
                     dist/${{ matrix.bin }}-${{ matrix.build.target }}
-                    dist/${{ matrix.bin }}-${{ matrix.build.target }}-SHA256SUM.txt
                 if-no-files-found: error
                 retention-days: 1
     release:
@@ -141,17 +135,7 @@ jobs:
             - name: ls artifacts
               run: tree ./artifacts
             - name: Prepare GitHub Release artifacts
-              run: |
-                mkdir dist/
-                cp -vr artifacts/aarch64-apple-darwin dist/aarch64-apple-darwin
-                cp -vr artifacts/aarch64-unknown-linux-gnu dist/aarch64-unknown-linux-gnu
-                cp -vr artifacts/i686-unknown-linux-gnu dist/i686-unknown-linux-gnu
-                cp -vr artifacts/x86_64-apple-darwin dist/x86_64-apple-darwin
-                cp -vr artifacts/x86_64-unknown-linux-gnu dist/x86_64-unknown-linux-gnu
-                cp -vr artifacts/x86_64-pc-windows-gnu dist/x86_64-pc-windows-gnu
-                cp -vr artifacts/i686-pc-windows-gnu dist/i686-pc-windows-gnu
-            - name: Combine checksums
-              run: cat dist/**/*-SHA256SUM.txt | tee dist/SHA256SUMS.txt
+              run: ./scripts/build.sh
             - name: Install Conventional Commit preset
               run: npm install conventional-changelog-conventionalcommits
             - name: Semantic Release
