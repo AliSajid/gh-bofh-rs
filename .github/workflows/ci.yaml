@@ -153,10 +153,3 @@ jobs:
         if: ${{needs.get-next-version.outputs.new-release-published == 'true'}}
         uses: ./.github/workflows/release.yaml
         secrets: inherit # pragma: allowlist secret
-    build-container:
-      permissions:
-        id-token: write
-        packages: write
-      needs: [ci]
-      uses: ./.github/workflows/build_container.yaml
-      secrets: inherit # pragma: allowlist secret
