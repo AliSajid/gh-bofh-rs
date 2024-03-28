@@ -1,3 +1,8 @@
+# SPDX-FileCopyrightText: 2024 Ali Sajid Imami
+#
+# SPDX-License-Identifier: Apache-2.0
+# SPDX-License-Identifier: MIT
+
 [package]
 name = "gh-bofh-rs"
 version = "1.0.0-next.1"

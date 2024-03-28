@@ -1,3 +1,10 @@
+<!--
+SPDX-FileCopyrightText: 2023 - 2024 Ali Sajid Imami
+
+SPDX-License-Identifier: Apache-2.0
+SPDX-License-Identifier: MIT
+-->
+
 # Third Party Licenses
 
 This page lists the licenses of the projects used in cargo-about.
@@ -426,7 +433,7 @@ Apache License 2.0
 
 #### Used by
 
-- [gh-bofh-rs]( https://github.com/AliSajid/gh-bofh-rs ) 1.0.0-next.7
+- [gh-bofh-rs]( https://github.com/AliSajid/gh-bofh-rs ) 1.0.0-next.6
 
 #### License
 
@@ -1074,9 +1081,9 @@ Apache License 2.0
 #### Used by
 
 - [anstream]( https://github.com/rust-cli/anstyle.git ) 0.6.8
-- [anstyle]( https://github.com/rust-cli/anstyle.git ) 1.0.4
 - [anstyle-query]( https://github.com/rust-cli/anstyle ) 1.0.2
 - [anstyle-wincon]( https://github.com/rust-cli/anstyle.git ) 3.0.2
+- [anstyle]( https://github.com/rust-cli/anstyle.git ) 1.0.4
 - [clap]( https://github.com/clap-rs/clap ) 4.4.18
 - [colorchoice]( https://github.com/rust-cli/anstyle ) 1.0.0
 
@@ -1490,7 +1497,6 @@ Apache License 2.0
 
 #### Used by
 
-- [futures]( https://github.com/rust-lang/futures-rs ) 0.3.30
 - [futures-channel]( https://github.com/rust-lang/futures-rs ) 0.3.30
 - [futures-core]( https://github.com/rust-lang/futures-rs ) 0.3.30
 - [futures-executor]( https://github.com/rust-lang/futures-rs ) 0.3.30
@@ -1499,6 +1505,7 @@ Apache License 2.0
 - [futures-sink]( https://github.com/rust-lang/futures-rs ) 0.3.30
 - [futures-task]( https://github.com/rust-lang/futures-rs ) 0.3.30
 - [futures-util]( https://github.com/rust-lang/futures-rs ) 0.3.30
+- [futures]( https://github.com/rust-lang/futures-rs ) 0.3.30
 
 #### License
 
@@ -2148,9 +2155,9 @@ Apache License 2.0
 - [cfg-if]( https://github.com/alexcrichton/cfg-if ) 1.0.0
 - [glob]( https://github.com/rust-lang/glob ) 0.3.1
 - [heck]( https://github.com/withoutboats/heck ) 0.4.1
-- [regex]( https://github.com/rust-lang/regex ) 1.10.2
 - [regex-automata]( https://github.com/rust-lang/regex/tree/master/regex-automata ) 0.4.3
 - [regex-syntax]( https://github.com/rust-lang/regex/tree/master/regex-syntax ) 0.8.2
+- [regex]( https://github.com/rust-lang/regex ) 1.10.2
 - [rustc_version]( https://github.com/Kimundi/rustc-version-rs ) 0.4.0
 
 #### License

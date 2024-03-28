@@ -1,5 +1,10 @@
 #!/usr/bin/env bash
 
+# SPDX-FileCopyrightText: 2024 Ali Sajid Imami
+#
+# SPDX-License-Identifier: Apache-2.0
+# SPDX-License-Identifier: MIT
+
 # A script that uses `cargo about` to generate a machine-readable summary of
 # the current crate's dependencies and their licenses and saves them
 # to a JSON file.

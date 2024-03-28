@@ -1,4 +1,7 @@
 ---
+# SPDX-FileCopyrightText: 2024 Ali Sajid Imami
+#
+# SPDX-License-Identifier: CC0-1.0
 extends: default
 rules:
     # 80 chars should be enough, but don't fail if a line is longer
