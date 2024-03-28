@@ -1,4 +1,7 @@
 ---
+# SPDX-FileCopyrightText: 2024 Ali Sajid Imami
+#
+# SPDX-License-Identifier: CC0-1.0
 repos:
     - repo: local
       hooks:
@@ -98,13 +101,6 @@ repos:
         - id: remove-crlf
         - id: forbid-tabs
         - id: remove-tabs
-        - args:
-            - --license-filepath
-            - meta/LICENSE-HEADER
-            - --comment-style
-            - //
-          files: \.rs$
-          id: insert-license
     - repo: https://github.com/google/yamlfmt
       rev: v0.10.0
       hooks:
