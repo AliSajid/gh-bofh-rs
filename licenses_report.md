@@ -433,7 +433,7 @@ Apache License 2.0
 
 #### Used by
 
-- [gh-bofh-rs]( https://github.com/AliSajid/gh-bofh-rs ) 1.0.0-next.6
+- [gh-bofh-rs]( https://github.com/AliSajid/gh-bofh-rs ) 1.0.0
 
 #### License
 

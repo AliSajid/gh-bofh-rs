@@ -64,7 +64,7 @@ jobs:
             - name: Cache dependencies
               uses: Swatinem/rust-cache@23bce251a8cd2ffc3c1075eaa2367cf899916d84 # v2.7.3
             - name: Install cross
-              uses: taiki-e/install-action@f03bd5e420b56953c9c6d492f25b1bdeed9c5aec # v2.29.1
+              uses: taiki-e/install-action@10b774e4cd9aedbfa3d470d887cf5272006b89a0 # v2.31.2
               with:
                 tool: cross
             - name: Configure cross
@@ -85,18 +85,12 @@ jobs:
               run: |
                 mkdir dist
                 cp target/${{ matrix.build.target }}/release/${{ matrix.bin }} dist/${{ matrix.bin }}-${{ matrix.build.target }}
-            - name: Create binary checksum
-              run: |
-                shasum --algorithm 256 \
-                --binary ${{ matrix.bin }}-${{ matrix.build.target }} | tee ${{ matrix.bin }}-${{ matrix.build.target }}-SHA256SUM.txt
-              working-directory: ./dist
             - name: Upload release artifacts
               uses: actions/upload-artifact@5d5d22a31266ced268874388b861e4b58bb5c2f3 # v4.3.1
               with:
                 name: ${{ matrix.build.target }}
                 path: |
                     dist/${{ matrix.bin }}-${{ matrix.build.target }}
-                    dist/${{ matrix.bin }}-${{ matrix.build.target }}-SHA256SUM.txt
                 if-no-files-found: error
                 retention-days: 1
     release:
@@ -131,7 +125,7 @@ jobs:
             - name: Install dependencies
               run: sudo apt install tree
             - name: Install semantic-release-cargo
-              uses: taiki-e/install-action@f03bd5e420b56953c9c6d492f25b1bdeed9c5aec # v2.29.1
+              uses: taiki-e/install-action@10b774e4cd9aedbfa3d470d887cf5272006b89a0 # v2.31.2
               with:
                 tool: semantic-release-cargo@${{env.SEMREL_RUST_VERSION}}
             - name: Download release artifacts
@@ -141,17 +135,7 @@ jobs:
             - name: ls artifacts
               run: tree ./artifacts
             - name: Prepare GitHub Release artifacts
-              run: |
-                mkdir dist/
-                cp -vr artifacts/aarch64-apple-darwin dist/aarch64-apple-darwin
-                cp -vr artifacts/aarch64-unknown-linux-gnu dist/aarch64-unknown-linux-gnu
-                cp -vr artifacts/i686-unknown-linux-gnu dist/i686-unknown-linux-gnu
-                cp -vr artifacts/x86_64-apple-darwin dist/x86_64-apple-darwin
-                cp -vr artifacts/x86_64-unknown-linux-gnu dist/x86_64-unknown-linux-gnu
-                cp -vr artifacts/x86_64-pc-windows-gnu dist/x86_64-pc-windows-gnu
-                cp -vr artifacts/i686-pc-windows-gnu dist/i686-pc-windows-gnu
-            - name: Combine checksums
-              run: cat dist/**/*-SHA256SUM.txt | tee dist/SHA256SUMS.txt
+              run: ./scripts/build.sh
             - name: Install Conventional Commit preset
               run: npm install conventional-changelog-conventionalcommits
             - name: Semantic Release

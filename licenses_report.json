@@ -5820,7 +5820,7 @@
                 "edition": "2021",
                 "features": {},
                 "homepage": null,
-                "id": "path+file:///Users/aimami/experiments/rust-projects/gh-bofh-rs#1.0.0-next.6",
+                "id": "path+file:///Users/aimami/experiments/rust-projects/gh-bofh-rs#1.0.0",
                 "keywords": [],
                 "license": "MIT OR Apache-2.0",
                 "license_file": null,
@@ -5864,7 +5864,7 @@
                         "test": true
                     }
                 ],
-                "version": "1.0.0-next.6"
+                "version": "1.0.0"
             }
         },
         {
@@ -13029,7 +13029,7 @@
                         "edition": "2021",
                         "features": {},
                         "homepage": null,
-                        "id": "path+file:///Users/aimami/experiments/rust-projects/gh-bofh-rs#1.0.0-next.6",
+                        "id": "path+file:///Users/aimami/experiments/rust-projects/gh-bofh-rs#1.0.0",
                         "keywords": [],
                         "license": "MIT OR Apache-2.0",
                         "license_file": null,
@@ -13073,7 +13073,7 @@
                                 "test": true
                             }
                         ],
-                        "version": "1.0.0-next.6"
+                        "version": "1.0.0"
                     },
                     "path": null
                 }
