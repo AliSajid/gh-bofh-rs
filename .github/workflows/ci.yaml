@@ -28,7 +28,7 @@ jobs:
         source_changed: ${{steps.changed_dirs.outputs.source}}
         book_changed: ${{steps.changed_dirs.outputs.book}}
       steps:
-        - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
+        - uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332 # v4.1.7
         - name: Check changed directories
           id: changed_dirs
           uses: dorny/paths-filter@de90cc6fb38fc0963ad72b210f1f284cd68cea36 # v3.0.2
@@ -78,7 +78,7 @@ jobs:
                     - rust: nightly
                       label: nightly
         steps:
-            - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
+            - uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332 # v4.1.7
             - name: Install Rust
               if: ${{ needs.check_changed_dirs.outputs.source_changed == 'true' }}
               uses: dtolnay/rust-toolchain@master
