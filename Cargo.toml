@@ -38,4 +38,4 @@ panic = 'abort'   # Abort on panic
 strip = "symbols" # Strip symbols from binary
 
 [dev-dependencies]
-rstest = "0.18.2"
+rstest = "0.21.0"
