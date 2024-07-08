@@ -117,7 +117,7 @@ jobs:
                 trust_level: 5
                 git_user_signingkey: true
                 git_commit_gpgsign: true
-                git_tag_gpgsign: false
+                git_tag_gpgsign: true
                 git_committer_name: ${{ vars.GIT_AUTHOR_NAME }}
                 git_committer_email: ${{ vars.GIT_AUTHOR_EMAIL }}
             - name: Test GPG Key Import
@@ -142,7 +142,7 @@ jobs:
               uses: cycjimmy/semantic-release-action@cb425203a562475bca039ba4dbf90c7f9ac790f4 # v4.1.0
               id: semantic
               with:
-                semantic_version: 22.0.3
+                semantic_version: 24.0.0
                 extra_plugins: |
                     @semantic-release/exec@6
                     @semantic-release/git@10
