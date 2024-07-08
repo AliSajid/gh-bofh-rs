@@ -5,6 +5,15 @@
 
 * **deps:** update rust crate clap to 4.5.4 ([b31f538](https://github.com/AliSajid/gh-bofh-rs/commit/b31f53842cfd3e3780ead55ff8fd23947d920d64))
 * **deps:** update rust crate clap to v4.5.8 ([bba27ec](https://github.com/AliSajid/gh-bofh-rs/commit/bba27ec10700a0803b5d93aa744fe0664f3caaff))
+* switch to thin tags ([e1692cc](https://github.com/AliSajid/gh-bofh-rs/commit/e1692cc25814435aa7789497187e77a5876f7761))
+
+## [1.1.1-next.1](https://github.com/AliSajid/gh-bofh-rs/compare/v1.1.0...v1.1.1-next.1) (2024-07-08)
+
+
+### Bug Fixes
+
+* **deps:** update rust crate clap to 4.5.4 ([b31f538](https://github.com/AliSajid/gh-bofh-rs/commit/b31f53842cfd3e3780ead55ff8fd23947d920d64))
+* **deps:** update rust crate clap to v4.5.8 ([bba27ec](https://github.com/AliSajid/gh-bofh-rs/commit/bba27ec10700a0803b5d93aa744fe0664f3caaff))
 
 ## [1.1.1-next.1](https://github.com/AliSajid/gh-bofh-rs/compare/v1.1.0...v1.1.1-next.1) (2024-07-08)
 
