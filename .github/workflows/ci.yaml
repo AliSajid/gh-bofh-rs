@@ -21,6 +21,10 @@ env:
     RUST_BACKTRACE: 1
     MINIMUM_WAIT: 3
     MAXIMUM_WAIT: 10
+
+permissions:
+  id-token: write
+  attestations: write
 jobs:
     check_changed_dirs:
       runs-on: ubuntu-latest
