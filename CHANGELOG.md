@@ -1,3 +1,12 @@
+## [1.1.1](https://github.com/AliSajid/gh-bofh-rs/compare/v1.1.0...v1.1.1) (2024-07-08)
+
+
+### Bug Fixes
+
+* **deps:** update rust crate clap to 4.5.4 ([b31f538](https://github.com/AliSajid/gh-bofh-rs/commit/b31f53842cfd3e3780ead55ff8fd23947d920d64))
+* **deps:** update rust crate clap to v4.5.8 ([6e1b89f](https://github.com/AliSajid/gh-bofh-rs/commit/6e1b89f86680b9b367779aca9eaa1f7c717b6d31))
+* switch to thin tags ([0441c7e](https://github.com/AliSajid/gh-bofh-rs/commit/0441c7e66ba92758f89b52403e96704576bf3ebc))
+
 ## [1.1.1-next.1](https://github.com/AliSajid/gh-bofh-rs/compare/v1.1.0...v1.1.1-next.1) (2024-07-08)
 
 
