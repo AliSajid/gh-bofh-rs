@@ -143,7 +143,9 @@ jobs:
               id: attestation
               uses: actions/attest-build-provenance@bdd51370e0416ac948727f861e03c2f05d32d78e # v1.3.2
               with:
-                subject-path: dist/gh-bofh*
+                subject-path: |
+                  dist/gh-bofh*
+                  !dist/*.asc
             - name: Move attestation to dist
               run: mv ${{steps.attestation.outputs.bundle-path}} dist/attestation.jsonl
             - name: Semantic Release
