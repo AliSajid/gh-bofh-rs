@@ -139,8 +139,6 @@ jobs:
               run: tree ./artifacts
             - name: Prepare GitHub Release artifacts
               run: ./scripts/build.sh
-            - name: Install Conventional Commit preset
-              run: npm install conventional-changelog-conventionalcommits
             - name: Attest build provenance
               id: attestation
               uses: actions/attest-build-provenance@bdd51370e0416ac948727f861e03c2f05d32d78e # v1.3.2
