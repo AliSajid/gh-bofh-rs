@@ -1,3 +1,11 @@
+## [1.1.2-next.3](https://github.com/AliSajid/gh-bofh-rs/compare/v1.1.2-next.2...v1.1.2-next.3) (2024-08-10)
+
+
+### Bug Fixes
+
+* **deps:** update rust crate clap to v4.5.14 ([42abdcd](https://github.com/AliSajid/gh-bofh-rs/commit/42abdcd7b0df45dbd2bd574eb81d5d4b2d68576b))
+* **deps:** update rust crate clap to v4.5.15 ([16947f6](https://github.com/AliSajid/gh-bofh-rs/commit/16947f625d76ff1915bbc79f6e9b435bc4e33641))
+
 ## [1.1.2-next.2](https://github.com/AliSajid/gh-bofh-rs/compare/v1.1.2-next.1...v1.1.2-next.2) (2024-08-02)
 
 
