@@ -64,7 +64,7 @@ jobs:
             - name: Cache dependencies
               uses: Swatinem/rust-cache@23bce251a8cd2ffc3c1075eaa2367cf899916d84 # v2.7.3
             - name: Install cross
-              uses: taiki-e/install-action@e96513f64c39eb6ebc73e13b6e8470317202483a # v2.42.28
+              uses: taiki-e/install-action@c28440593e2689ec0c3803c7468907b0c00bff63 # v2.42.29
               with:
                 tool: cross
             - name: Configure cross
@@ -128,7 +128,7 @@ jobs:
             - name: Install dependencies
               run: sudo apt install tree
             - name: Install semantic-release-cargo
-              uses: taiki-e/install-action@e96513f64c39eb6ebc73e13b6e8470317202483a # v2.42.28
+              uses: taiki-e/install-action@c28440593e2689ec0c3803c7468907b0c00bff63 # v2.42.29
               with:
                 tool: semantic-release-cargo@${{env.SEMREL_RUST_VERSION}}
             - name: Download release artifacts
@@ -141,7 +141,7 @@ jobs:
               run: ./scripts/build.sh
             - name: Attest build provenance
               id: attestation
-              uses: actions/attest-build-provenance@310b0a4a3b0b78ef57ecda988ee04b132db73ef8 # v1.4.1
+              uses: actions/attest-build-provenance@6149ea5740be74af77f260b9db67e633f6b0a9a1 # v1.4.2
               with:
                 subject-path: |
                   dist/gh-bofh*
