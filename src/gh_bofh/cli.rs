@@ -12,7 +12,7 @@ use clap::{
     ValueEnum,
 };
 
-#[derive(Debug, Clone, Copy, ValueEnum)]
+#[derive(Debug, Clone, Copy, ValueEnum, PartialEq, Eq)]
 pub enum ExcuseType {
     Classic,
     Modern,
@@ -53,4 +53,78 @@ pub struct Cli {
     /// Generates a more modern BOFH excuse.
     #[arg(short = 'm', long = "modern", group = "type")]
     pub modern: bool,
+}
+
+#[cfg(test)]
+mod tests {
+    use sealed_test::prelude::*;
+
+    use super::*;
+
+    #[test]
+    fn test_default_classic_excuse() {
+        let args = ["test"];
+        let parsed = Cli::try_parse_from(args);
+        assert!(parsed.is_ok());
+        let opts = parsed.unwrap();
+        assert_eq!(opts.excuse_type, ExcuseType::Classic);
+    }
+
+    #[test]
+    fn test_specify_classic_excuse() {
+        let args = ["test", "--type", "classic"];
+        let parsed = Cli::try_parse_from(args);
+        assert!(parsed.is_ok());
+        let opts = parsed.unwrap();
+        assert_eq!(opts.excuse_type, ExcuseType::Classic);
+    }
+
+    #[test]
+    fn test_specify_modern_excuse() {
+        let args = ["test", "--type", "modern"];
+        let parsed = Cli::try_parse_from(args);
+        assert!(parsed.is_ok());
+        let opts = parsed.unwrap();
+        assert_eq!(opts.excuse_type, ExcuseType::Modern);
+    }
+
+    #[test]
+    fn test_short_flag_classic() {
+        let args = ["test", "-c"];
+        let parsed = Cli::try_parse_from(args);
+        assert!(parsed.is_ok());
+        let opts = parsed.unwrap();
+        assert!(opts.classic);
+        assert!(!opts.modern);
+    }
+
+    #[test]
+    fn test_short_flag_modern() {
+        let args = ["test", "-m"];
+        let parsed = Cli::try_parse_from(args);
+        assert!(parsed.is_ok());
+        let opts = parsed.unwrap();
+        assert!(!opts.classic);
+        assert!(opts.modern);
+    }
+
+    #[sealed_test(env = [ ("EXCUSE_TYPE", "classic") ])]
+    fn test_env_var_classic() {
+        let parsed = Cli::try_parse_from(["test"]);
+        assert!(parsed.is_ok());
+        let opts = parsed.unwrap();
+        assert_eq!(opts.excuse_type, ExcuseType::Classic);
+        assert!(!opts.classic);
+        assert!(!opts.modern);
+    }
+
+    #[sealed_test(env = [ ("EXCUSE_TYPE", "modern") ])]
+    fn test_env_var_modern() {
+        let parsed = Cli::try_parse_from(["test"]);
+        assert!(parsed.is_ok());
+        let opts = parsed.unwrap();
+        assert_eq!(opts.excuse_type, ExcuseType::Modern);
+        assert!(!opts.classic);
+        assert!(!opts.modern);
+    }
 }
