@@ -1,3 +1,10 @@
+# [1.2.0-next.1](https://github.com/AliSajid/gh-bofh-rs/compare/v1.1.3...v1.2.0-next.1) (2024-09-20)
+
+
+### Features
+
+* bump the MSRV to 1.74.1 ([4f7812a](https://github.com/AliSajid/gh-bofh-rs/commit/4f7812a9c1e0f01356e7f6e4b083c21315bb66db))
+
 ## [1.1.3](https://github.com/AliSajid/gh-bofh-rs/compare/v1.1.2...v1.1.3) (2024-09-17)
 
 
