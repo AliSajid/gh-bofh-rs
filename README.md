@@ -9,12 +9,22 @@ SPDX-License-Identifier: MIT
 
 ![GitHub release (latest by date)](https://img.shields.io/github/v/release/AliSajid/gh-bofh-rs)
 ![GitHub tag (latest SemVer)](https://img.shields.io/github/v/tag/AliSajid/gh-bofh-rs)
-[![Continuous integration](https://github.com/AliSajid/gh-bofh-rs/actions/workflows/ci.yaml/badge.svg?branch=main&event=push)](https://github.com/AliSajid/gh-bofh-rs/actions/workflows/ci.yaml)
-[![Security Audit](https://github.com/AliSajid/gh-bofh-rs/actions/workflows/audit.yaml/badge.svg?branch=main)](https://github.com/AliSajid/gh-bofh-rs/actions/workflows/audit.yaml)
+![Crates.io Version](https://img.shields.io/crates/v/gh-bofh-rs)
+![Crates.io Size](https://img.shields.io/crates/size/gh-bofh-rs)
+![Maintenance](https://img.shields.io/maintenance/yes/2024)
+![OSS Lifecycle](https://img.shields.io/osslifecycle?file_url=https%3A%2F%2Fraw.githubusercontent.com%2FAliSajid%2Fgh-bofh-rs%2Fmain%2FOSSMETADATA)
 
-[![Contribute with Gitpod](https://img.shields.io/badge/Contribute%20with-Gitpod-908a85?logo=gitpod)](https://gitpod.io/#AliSajid/gh-bofh-rs)
+[![Continuous integration](https://github.com/AliSajid/gh-bofh-rs/actions/workflows/ci.yaml/badge.svg?branch=main&event=push)](https://github.com/AliSajid/gh-bofh-rs/actions/workflows/ci.yaml)
+[![codecov](https://codecov.io/gh/AliSajid/gh-bofh-rs/graph/badge.svg?token=rrsVYywjlx)](https://codecov.io/gh/AliSajid/gh-bofh-rs)
+[![Security Audit](https://github.com/AliSajid/gh-bofh-rs/actions/workflows/audit.yaml/badge.svg?branch=main)](https://github.com/AliSajid/gh-bofh-rs/actions/workflows/audit.yaml)
 ![GitHub issues](https://img.shields.io/github/issues/AliSajid/gh-bofh-rs)
+
+![Crates.io License](https://img.shields.io/crates/l/gh-bofh-rs)
 ![REUSE Compliance](https://img.shields.io/reuse/compliance/github.com%2FAliSajid%2Fgh-bofh-rs)
+[![OpenSSF Best Practices](https://www.bestpractices.dev/projects/9466/badge)](https://www.bestpractices.dev/projects/9466)
+
+![Libraries.io SourceRank](https://img.shields.io/librariesio/sourcerank/cargo/gh-bofh-rs)
+![ClearlyDefined Score](https://img.shields.io/clearlydefined/score/crate/cratesio/-/gh-bofh-rs/1.1.3)
 
 Generate a BOFH Excuse for github-cli from the commandline as a `gh` extension.
 
