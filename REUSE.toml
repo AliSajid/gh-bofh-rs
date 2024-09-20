@@ -79,3 +79,9 @@ path = ".github/.codecov.yaml"
 precedence = "aggregate"
 SPDX-FileCopyrightText = "2023 - 2024 Ali Sajid Imami"
 SPDX-License-Identifier = "CC0-1.0"
+
+[[annotations]]
+path = "OSSMETADATA"
+precedence = "aggregate"
+SPDX-FileCopyrightText = "2023 - 2024 Ali Sajid Imami"
+SPDX-License-Identifier = "CC0-1.0"
