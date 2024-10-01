@@ -1,57 +1,5 @@
-<<<<<<< HEAD
 # [1.2.0] (2024-09-20)
-||||||| parent of 28f4cd2 (chore(release): 1.2.0-next.1 [skip ci])
-# [1.2.0-next.1](https://github.com/AliSajid/gh-bofh-rs/compare/v1.1.3...v1.2.0-next.1) (2024-09-29)
 
-
-### Bug Fixes
-
-* **deps:** update rust crate clap to v4.5.18 ([a355652](https://github.com/AliSajid/gh-bofh-rs/commit/a3556529733c06398bdd66edcdc9cfae5d714b04))
-
-
-### Features
-
-* bump the MSRV to 1.74.1 ([a84d6d1](https://github.com/AliSajid/gh-bofh-rs/commit/a84d6d13455049a81130e4d401b42fddf4079ab9))
-
-# [1.2.0-next.1](https://github.com/AliSajid/gh-bofh-rs/compare/v1.1.3...v1.2.0-next.1) (2024-09-28)
-
-
-### Bug Fixes
-
-* **deps:** update rust crate clap to v4.5.18 ([a355652](https://github.com/AliSajid/gh-bofh-rs/commit/a3556529733c06398bdd66edcdc9cfae5d714b04))
-
-
-### Features
-
-* bump the MSRV to 1.74.1 ([a84d6d1](https://github.com/AliSajid/gh-bofh-rs/commit/a84d6d13455049a81130e4d401b42fddf4079ab9))
-
-# [1.2.0-next.1](https://github.com/AliSajid/gh-bofh-rs/compare/v1.1.3...v1.2.0-next.1) (2024-09-28)
-
-
-### Bug Fixes
-
-* **deps:** update rust crate clap to v4.5.18 ([a355652](https://github.com/AliSajid/gh-bofh-rs/commit/a3556529733c06398bdd66edcdc9cfae5d714b04))
-
-
-### Features
-
-* bump the MSRV to 1.74.1 ([a84d6d1](https://github.com/AliSajid/gh-bofh-rs/commit/a84d6d13455049a81130e4d401b42fddf4079ab9))
-
-# [1.2.0-next.1](https://github.com/AliSajid/gh-bofh-rs/compare/v1.1.3...v1.2.0-next.1) (2024-09-27)
-
-
-### Bug Fixes
-
-* **deps:** update rust crate clap to v4.5.18 ([a355652](https://github.com/AliSajid/gh-bofh-rs/commit/a3556529733c06398bdd66edcdc9cfae5d714b04))
-
-
-### Features
-
-* bump the MSRV to 1.74.1 ([a84d6d1](https://github.com/AliSajid/gh-bofh-rs/commit/a84d6d13455049a81130e4d401b42fddf4079ab9))
-
-# [1.2.0-next.1](https://github.com/AliSajid/gh-bofh-rs/compare/v1.1.3...v1.2.0-next.1) (2024-09-26)
-
-=======
 # [1.2.0-next.1](https://github.com/AliSajid/gh-bofh-rs/compare/v1.1.3...v1.2.0-next.1) (2024-09-30)
 
 
@@ -114,7 +62,6 @@
 
 # [1.2.0-next.1](https://github.com/AliSajid/gh-bofh-rs/compare/v1.1.3...v1.2.0-next.1) (2024-09-26)
 
->>>>>>> 28f4cd2 (chore(release): 1.2.0-next.1 [skip ci])
 
 ### Bug Fixes
 
