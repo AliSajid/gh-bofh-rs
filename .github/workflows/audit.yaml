@@ -21,11 +21,11 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - name: Checkout
-              uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332 # v4.1.7
+              uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
             - name: Install Rust
               uses: dtolnay/rust-toolchain@stable
             - name: Install cargo-audit
-              uses: taiki-e/install-action@5b7f19ed4759822ecb1606f4680073f9c0e78410 # v2.44.5
+              uses: taiki-e/install-action@2b51c05cf7315a16dcec651726da87c70e45b990 # v2.45.7
               with:
                 tool: cargo-audit
             - name: Security Audit

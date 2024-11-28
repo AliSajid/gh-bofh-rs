@@ -48,7 +48,7 @@ jobs:
                       cross: true
         steps:
             - name: Checkout
-              uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332 # v4.1.7
+              uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
             - name: Install tree
               if: runner.os == 'Linux'
               run: sudo apt install tree
@@ -62,9 +62,9 @@ jobs:
                 toolchain: stable
                 target: ${{ matrix.build.target }}
             - name: Cache dependencies
-              uses: Swatinem/rust-cache@23bce251a8cd2ffc3c1075eaa2367cf899916d84 # v2.7.3
+              uses: Swatinem/rust-cache@82a92a6e8fbeee089604da2575dc567ae9ddeaab # v2.7.5
             - name: Install cross
-              uses: taiki-e/install-action@5b7f19ed4759822ecb1606f4680073f9c0e78410 # v2.44.5
+              uses: taiki-e/install-action@2b51c05cf7315a16dcec651726da87c70e45b990 # v2.45.7
               with:
                 tool: cross
             - name: Configure cross
@@ -86,7 +86,7 @@ jobs:
                 mkdir dist
                 cp target/${{ matrix.build.target }}/release/${{ matrix.bin }} dist/${{ matrix.bin }}-${{ matrix.build.target }}
             - name: Upload release artifacts
-              uses: actions/upload-artifact@50769540e7f4bd5e21e526ee35c689e35e0d6874 # v4.4.0
+              uses: actions/upload-artifact@b4b15b8c7c6ac21ea08fcf65892d2ee8f75cf882 # v4.4.3
               with:
                 name: ${{ matrix.build.target }}
                 path: |
@@ -107,12 +107,12 @@ jobs:
             new_release_channel: ${{steps.semantic.outputs.new_release_channel}}
         steps:
             - name: Checkout
-              uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332 # v4.1.7
+              uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
               with:
                 fetch-depth: 0
                 persist-credentials: false
             - name: Import GPG key
-              uses: crazy-max/ghaction-import-gpg@01dd5d3ca463c7f10f7f4f7b4f177225ac661ee4 # v6.1.0
+              uses: crazy-max/ghaction-import-gpg@cb9bde2e2525e640591a934b1fd28eef1dcaf5e5 # v6.2.0
               with:
                 gpg_private_key: ${{ secrets.GPG_PRIVATE_KEY }}
                 passphrase: ${{ secrets.GPG_KEY_PASSPHRASE }}
@@ -128,7 +128,7 @@ jobs:
             - name: Install dependencies
               run: sudo apt install tree
             - name: Install semantic-release-cargo
-              uses: taiki-e/install-action@5b7f19ed4759822ecb1606f4680073f9c0e78410 # v2.44.5
+              uses: taiki-e/install-action@2b51c05cf7315a16dcec651726da87c70e45b990 # v2.45.7
               with:
                 tool: semantic-release-cargo@${{env.SEMREL_RUST_VERSION}}
             - name: Download release artifacts
@@ -141,7 +141,7 @@ jobs:
               run: ./scripts/build.sh
             - name: Attest build provenance
               id: attestation
-              uses: actions/attest-build-provenance@1c608d11d69870c2092266b3f9a6f3abbf17002c # v1.4.3
+              uses: actions/attest-build-provenance@ef244123eb79f2f7a7e75d99086184180e6d0018 # v1.4.4
               with:
                 subject-path: |
                   dist/gh-bofh*
@@ -149,7 +149,7 @@ jobs:
             - name: Move attestation to dist
               run: mv ${{steps.attestation.outputs.bundle-path}} dist/attestation.jsonl
             - name: Semantic Release
-              uses: cycjimmy/semantic-release-action@cb425203a562475bca039ba4dbf90c7f9ac790f4 # v4.1.0
+              uses: cycjimmy/semantic-release-action@b1b432f13acb7768e0c8efdec416d363a57546f2 # v4.1.1
               id: semantic
               with:
                 semantic_version: 24.0.0

@@ -5,7 +5,7 @@
 
 [package]
 name = "gh-bofh-rs"
-version = "1.2.0"
+version = "1.2.1-next.1"
 edition = "2021"
 readme = "README.md"
 description = "A Rust implementation of the classic `bofh` command as a GitHub CLI extension."
@@ -38,5 +38,5 @@ panic = 'abort'   # Abort on panic
 strip = "symbols" # Strip symbols from binary
 
 [dev-dependencies]
-rstest = "0.22.0"
+rstest = "0.23.0"
 sealed_test = "1.1.0"
