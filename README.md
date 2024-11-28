@@ -87,8 +87,6 @@ This project is currently being maintained. We are happy to include more modern 
 
 If you want to contribute to this project, please read the [CONTRIBUTING.md](CONTRIBUTING.md) file.
 
-[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#AliSajid/gh-bofh-rs)
-
 ## License
 
 This project is dual-licensed under the [MIT](LICENSE-MIT) and [Apache 2.0](LICENSE-APACHE) licenses.
