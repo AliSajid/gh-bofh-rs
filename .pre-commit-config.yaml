@@ -135,3 +135,7 @@ repos:
       rev: v4.0.2
       hooks:
         - id: reuse
+    - repo: https://github.com/jumanjihouse/pre-commit-hooks
+      rev: 3.0.0
+      hooks:
+        - id: shellcheck
