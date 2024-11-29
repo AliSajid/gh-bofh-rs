@@ -7579,6 +7579,36 @@
                         "kind": [
                             "test"
                         ],
+                        "name": "test_binary_classic",
+                        "required-features": [],
+                        "src_path": "/Users/aimami/experiments/rust-projects/gh-bofh-rs/tests/test_binary_classic.rs",
+                        "test": true
+                    },
+                    {
+                        "crate_types": [
+                            "bin"
+                        ],
+                        "doc": false,
+                        "doctest": false,
+                        "edition": "2021",
+                        "kind": [
+                            "test"
+                        ],
+                        "name": "test_binary_modern",
+                        "required-features": [],
+                        "src_path": "/Users/aimami/experiments/rust-projects/gh-bofh-rs/tests/test_binary_modern.rs",
+                        "test": true
+                    },
+                    {
+                        "crate_types": [
+                            "bin"
+                        ],
+                        "doc": false,
+                        "doctest": false,
+                        "edition": "2021",
+                        "kind": [
+                            "test"
+                        ],
                         "name": "test_common_excuses",
                         "required-features": [],
                         "src_path": "/Users/aimami/experiments/rust-projects/gh-bofh-rs/tests/test_common_excuses.rs",
@@ -34727,6 +34757,36 @@
                                 "name": "gh-bofh",
                                 "required-features": [],
                                 "src_path": "/Users/aimami/experiments/rust-projects/gh-bofh-rs/src/gh_bofh/main.rs",
+                                "test": true
+                            },
+                            {
+                                "crate_types": [
+                                    "bin"
+                                ],
+                                "doc": false,
+                                "doctest": false,
+                                "edition": "2021",
+                                "kind": [
+                                    "test"
+                                ],
+                                "name": "test_binary_classic",
+                                "required-features": [],
+                                "src_path": "/Users/aimami/experiments/rust-projects/gh-bofh-rs/tests/test_binary_classic.rs",
+                                "test": true
+                            },
+                            {
+                                "crate_types": [
+                                    "bin"
+                                ],
+                                "doc": false,
+                                "doctest": false,
+                                "edition": "2021",
+                                "kind": [
+                                    "test"
+                                ],
+                                "name": "test_binary_modern",
+                                "required-features": [],
+                                "src_path": "/Users/aimami/experiments/rust-projects/gh-bofh-rs/tests/test_binary_modern.rs",
                                 "test": true
                             },
                             {
