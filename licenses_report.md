@@ -11,8 +11,8 @@ This page lists the licenses of the projects used in cargo-about.
 
 ## Overview of licenses
 
-- [Apache License 2.0](#Apache-2.0) (70)
-- [MIT License](#MIT) (10)
+- [Apache License 2.0](#Apache-2.0) (75)
+- [MIT License](#MIT) (13)
 - [Unicode License Agreement - Data Files and Software (2016)](#Unicode-DFS-2016) (1)
 
 ## All license text
@@ -885,7 +885,7 @@ Apache License 2.0
 
 #### Used by
 
-- [clap_builder]( https://github.com/clap-rs/clap ) 4.5.20
+- [clap_builder]( https://github.com/clap-rs/clap ) 4.5.21
 - [clap_derive]( https://github.com/clap-rs/clap ) 4.5.18
 - [clap_lex]( https://github.com/clap-rs/clap/tree/master/clap_lex ) 0.7.0
 
@@ -1103,6 +1103,9 @@ Apache License 2.0
 #### Used by
 
 - [anstyle-parse]( https://github.com/rust-cli/anstyle.git ) 0.2.3
+- [predicates-core]( https://github.com/assert-rs/predicates-rs/tree/master/crates/core ) 1.0.8
+- [predicates-tree]( https://github.com/assert-rs/predicates-rs/tree/master/crates/tree ) 1.0.11
+- [predicates]( https://github.com/assert-rs/predicates-rs ) 3.1.2
 
 #### License
 
@@ -1321,7 +1324,8 @@ Apache License 2.0
 - [anstyle-query]( https://github.com/rust-cli/anstyle ) 1.0.2
 - [anstyle-wincon]( https://github.com/rust-cli/anstyle.git ) 3.0.2
 - [anstyle]( https://github.com/rust-cli/anstyle.git ) 1.0.8
-- [clap]( https://github.com/clap-rs/clap ) 4.5.20
+- [assert_cmd]( https://github.com/assert-rs/assert_cmd.git ) 2.0.16
+- [clap]( https://github.com/clap-rs/clap ) 4.5.21
 - [colorchoice]( https://github.com/rust-cli/anstyle ) 1.0.0
 - [quick-error]( http://github.com/tailhook/quick-error ) 1.2.3
 - [toml_datetime]( https://github.com/toml-rs/toml ) 0.6.8
@@ -2393,6 +2397,7 @@ Apache License 2.0
 
 - [autocfg]( https://github.com/cuviper/autocfg ) 1.1.0
 - [bitflags]( https://github.com/bitflags/bitflags ) 2.6.0
+- [bstr]( https://github.com/BurntSushi/bstr ) 1.11.0
 - [cfg-if]( https://github.com/alexcrichton/cfg-if ) 1.0.0
 - [equivalent]( https://github.com/cuviper/equivalent ) 1.0.1
 - [errno]( https://github.com/lambda-fairy/rust-errno ) 0.3.9
@@ -3471,7 +3476,7 @@ Apache License 2.0
 
 #### Used by
 
-- [gh-bofh-rs]( https://github.com/AliSajid/gh-bofh-rs ) 1.2.0
+- [gh-bofh-rs]( https://github.com/AliSajid/gh-bofh-rs ) 1.2.1-next.1
 - [relative-path]( https://github.com/udoprog/relative-path ) 1.9.3
 
 #### License
@@ -3559,6 +3564,40 @@ MIT License
 
 #### Used by
 
+- [termtree]( https://github.com/rust-cli/termtree ) 0.4.1
+
+#### License
+
+```text
+Copyright (c) 2017 Doug Tangren
+
+Permission is hereby granted, free of charge, to any person obtaining
+a copy of this software and associated documentation files (the
+"Software"), to deal in the Software without restriction, including
+without limitation the rights to use, copy, modify, merge, publish,
+distribute, sublicense, and/or sell copies of the Software, and to
+permit persons to whom the Software is furnished to do so, subject to
+the following conditions:
+
+The above copyright notice and this permission notice shall be
+included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE
+LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
+OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
+WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+```
+
+### MIT
+
+MIT License
+
+#### Used by
+
 - [slab]( https://github.com/tokio-rs/slab ) 0.4.9
 
 #### License
@@ -3633,6 +3672,41 @@ MIT License
 
 #### Used by
 
+- [doc-comment]( https://github.com/GuillaumeGomez/doc-comment ) 0.3.3
+
+#### License
+
+```text
+MIT License
+
+Copyright (c) 2018 Guillaume Gomez
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+```
+
+### MIT
+
+MIT License
+
+#### Used by
+
 - [sealed_test]( https://github.com/oknozor/sealed-test ) 1.1.0
 - [sealed_test_derive]( https://github.com/oknozor/sealed-test ) 1.1.0
 
@@ -3660,6 +3734,29 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+
+```
+
+### MIT
+
+MIT License
+
+#### Used by
+
+- [difflib]( https://github.com/DimaKudosh/difflib ) 0.4.0
+
+#### License
+
+```text
+MIT License
+
+Copyright (c) <year> <copyright holders>
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 ```
 
