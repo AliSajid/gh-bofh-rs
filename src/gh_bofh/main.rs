@@ -18,8 +18,19 @@ use gh_bofh_lib::{
 
 fn main() {
     let arguments = Cli::parse();
-    match arguments.excuse_type {
+    let chosen_type = process_choice(&arguments);
+    match chosen_type {
         ExcuseType::Classic => println!("{}", random_classic()),
         ExcuseType::Modern => println!("{}", random_modern()),
+    }
+}
+
+fn process_choice(arguments: &Cli) -> ExcuseType {
+    if arguments.classic {
+        ExcuseType::Classic
+    } else if arguments.modern {
+        ExcuseType::Modern
+    } else {
+        arguments.excuse_type
     }
 }
