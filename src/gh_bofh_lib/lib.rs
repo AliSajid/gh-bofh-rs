@@ -6,7 +6,7 @@
 
 mod excuses;
 
-use excuses::{
+pub use excuses::{
     CLASSIC,
     MODERN,
 };
