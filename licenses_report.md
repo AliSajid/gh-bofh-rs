@@ -11,7 +11,7 @@ This page lists the licenses of the projects used in cargo-about.
 
 ## Overview of licenses
 
-- [Apache License 2.0](#Apache-2.0) (75)
+- [Apache License 2.0](#Apache-2.0) (74)
 - [MIT License](#MIT) (13)
 - [Unicode License Agreement - Data Files and Software (2016)](#Unicode-DFS-2016) (1)
 
@@ -1548,8 +1548,6 @@ Apache License 2.0
 - [libc]( https://github.com/rust-lang/libc ) 0.2.152
 - [proc-macro2]( https://github.com/dtolnay/proc-macro2 ) 1.0.86
 - [quote]( https://github.com/dtolnay/quote ) 1.0.37
-- [semver]( https://github.com/dtolnay/semver ) 1.0.21
-- [syn]( https://github.com/dtolnay/syn ) 2.0.79
 - [unicode-ident]( https://github.com/dtolnay/unicode-ident ) 1.0.13
 - [utf8parse]( https://github.com/alacritty/vte ) 0.2.1
 
@@ -3454,30 +3452,10 @@ Apache License 2.0
 
 #### Used by
 
-- [rusty-forkfork]( https://github.com/oknozor/rusty-forkfork ) 0.4.0
-
-#### License
-
-```text
-//-
-// Copyright 2018
-//
-// Licensed under the Apache License, Version 2.0 <LICENSE-APACHE or
-// http://www.apache.org/licenses/LICENSE-2.0> or the MIT license
-// <LICENSE-MIT or http://opensource.org/licenses/MIT>, at your
-// option. This file may not be copied, modified, or distributed
-// except according to those terms.
-
-```
-
-### Apache-2.0
-
-Apache License 2.0
-
-#### Used by
-
 - [gh-bofh-rs]( https://github.com/AliSajid/gh-bofh-rs ) 1.2.1-next.1
 - [relative-path]( https://github.com/udoprog/relative-path ) 1.9.3
+- [semver]( https://github.com/dtolnay/semver ) 1.0.21
+- [syn]( https://github.com/dtolnay/syn ) 2.0.79
 
 #### License
 
