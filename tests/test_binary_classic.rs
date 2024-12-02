@@ -3,6 +3,18 @@
 // SPDX-License-Identifier: Apache-2.0
 // SPDX-License-Identifier: MIT
 
+//! Integration tests for the `gh-bofh` binary.
+//!
+//! These tests ensure that the `gh-bofh` binary works as expected when executed
+//! with different arguments and environment variables. The tests cover the
+//! following scenarios:
+//!
+//! - Running the binary with no arguments.
+//! - Running the binary with the `--type classic` argument.
+//! - Running the binary with the `-c` short argument.
+//! - Running the binary with the `EXCUSE_TYPE` environment variable set to
+//!   `classic`.
+
 use assert_cmd::Command;
 use gh_bofh_lib::CLASSIC;
 
