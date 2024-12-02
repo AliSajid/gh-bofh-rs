@@ -3,6 +3,18 @@
 // SPDX-License-Identifier: Apache-2.0
 // SPDX-License-Identifier: MIT
 
+//! Integration tests for the `gh-bofh` library focusing on modern excuses.
+//!
+//! These tests ensure that the `random_modern` function from the `gh_bofh_lib`
+//! crate works as expected. The tests cover the following scenarios:
+//!
+//! - Generating multiple modern excuses and ensuring they are not empty.
+//! - Ensuring that the generated excuses do not contain a specific error
+//!   message.
+//! - Verifying that the generated excuses are unique up to a certain limit.
+//! - Checking that all generated excuses are part of the predefined `MODERN`
+//!   set.
+
 use std::collections::HashSet;
 
 use gh_bofh_lib::{
