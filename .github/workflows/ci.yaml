@@ -97,7 +97,7 @@ jobs:
                 components: rustfmt, clippy
             - name: Install nightly Rust
               if: ${{ needs.check_changed_dirs.outputs.source_changed == 'true' }}
-              uses: dtolnay/rust-toolchain@525fbff0dae0f21267554d5c96520a169909e20a # nightly
+              uses: dtolnay/rust-toolchain@315e265cd78dad1e1dcf3a5074f6d6c47029d5aa # nightly
               with:
                 toolchain: nightly
                 components: rustfmt, clippy
@@ -118,7 +118,7 @@ jobs:
               run: cargo clippy -- -D warnings
             - name: Wait before badge creation
               if: ${{ needs.check_changed_dirs.outputs.source_changed == 'true' }}
-              uses: AliSajid/random-wait-action@d75d5227161d2bde73ae3c4b830e38a886de19fd # v2.7.0
+              uses: AliSajid/random-wait-action@40d889c4a98667b64566903e7ba9c86e76be9e32 # v2.7.1
               with:
                 minimum: ${{env.MINIMUM_WAIT}}
                 maximum: ${{env.MAXIMUM_WAIT}}
