@@ -11,8 +11,8 @@ This page lists the licenses of the projects used in cargo-about.
 
 ## Overview of licenses
 
-- [Apache License 2.0](#Apache-2.0) (48)
-- [MIT License](#MIT) (9)
+- [Apache License 2.0](#Apache-2.0) (74)
+- [MIT License](#MIT) (24)
 - [Unicode License Agreement - Data Files and Software (2016)](#Unicode-DFS-2016) (1)
 
 ## All license text
@@ -477,6 +477,9 @@ Apache License 2.0
 
 #### Used by
 
+- [ciborium-io]( https://github.com/enarx/ciborium ) 0.2.2
+- [ciborium-ll]( https://github.com/enarx/ciborium ) 0.2.2
+- [ciborium]( https://github.com/enarx/ciborium ) 0.2.2
 - [clap_builder]( https://github.com/clap-rs/clap ) 4.5.21
 - [clap_derive]( https://github.com/clap-rs/clap ) 4.5.18
 - [clap_lex]( https://github.com/clap-rs/clap/tree/master/clap_lex ) 0.7.0
@@ -1138,6 +1141,10 @@ Apache License 2.0
 - [libc]( https://github.com/rust-lang/libc ) 0.2.152
 - [proc-macro2]( https://github.com/dtolnay/proc-macro2 ) 1.0.86
 - [quote]( https://github.com/dtolnay/quote ) 1.0.37
+- [ryu]( https://github.com/dtolnay/ryu ) 1.0.18
+- [serde]( https://github.com/serde-rs/serde ) 1.0.210
+- [serde_derive]( https://github.com/serde-rs/serde ) 1.0.210
+- [serde_json]( https://github.com/serde-rs/json ) 1.0.133
 - [syn]( https://github.com/dtolnay/syn ) 2.0.79
 - [unicode-ident]( https://github.com/dtolnay/unicode-ident ) 1.0.13
 - [utf8parse]( https://github.com/alacritty/vte ) 0.2.1
@@ -1545,19 +1552,34 @@ Apache License 2.0
 
 #### Used by
 
+- [autocfg]( https://github.com/cuviper/autocfg ) 1.4.0
 - [bitflags]( https://github.com/bitflags/bitflags ) 2.6.0
 - [bstr]( https://github.com/BurntSushi/bstr ) 1.11.0
+- [cast]( https://github.com/japaric/cast.rs ) 0.3.0
 - [cfg-if]( https://github.com/alexcrichton/cfg-if ) 1.0.0
+- [criterion-plot]( https://github.com/bheisler/criterion.rs ) 0.5.0
+- [criterion]( https://github.com/bheisler/criterion.rs ) 0.5.1
+- [crossbeam-deque]( https://github.com/crossbeam-rs/crossbeam ) 0.8.5
+- [crossbeam-epoch]( https://github.com/crossbeam-rs/crossbeam ) 0.9.18
+- [crossbeam-utils]( https://github.com/crossbeam-rs/crossbeam ) 0.8.20
+- [either]( https://github.com/rayon-rs/either ) 1.13.0
 - [errno]( https://github.com/lambda-fairy/rust-errno ) 0.3.10
 - [fastrand]( https://github.com/smol-rs/fastrand ) 2.2.0
 - [fnv]( https://github.com/servo/rust-fnv ) 1.0.7
 - [heck]( https://github.com/withoutboats/heck ) 0.5.0
+- [itertools]( https://github.com/rust-itertools/itertools ) 0.10.5
 - [linux-raw-sys]( https://github.com/sunfishcode/linux-raw-sys ) 0.4.14
+- [num-traits]( https://github.com/rust-num/num-traits ) 0.2.19
 - [once_cell]( https://github.com/matklad/once_cell ) 1.20.2
+- [rayon-core]( https://github.com/rayon-rs/rayon ) 1.12.1
+- [rayon]( https://github.com/rayon-rs/rayon ) 1.10.0
 - [regex-automata]( https://github.com/rust-lang/regex/tree/master/regex-automata ) 0.4.9
+- [regex-syntax]( https://github.com/rust-lang/regex/tree/master/regex-syntax ) 0.8.5
+- [regex]( https://github.com/rust-lang/regex ) 1.11.1
 - [rustix]( https://github.com/bytecodealliance/rustix ) 0.38.31
 - [rusty-forkfork]( https://github.com/oknozor/rusty-forkfork ) 0.4.0
 - [tempfile]( https://github.com/Stebalien/tempfile ) 3.11.0
+- [tinytemplate]( https://github.com/bheisler/TinyTemplate ) 1.2.1
 - [wait-timeout]( https://github.com/alexcrichton/wait-timeout ) 0.2.0
 
 #### License
@@ -2403,6 +2425,9 @@ Apache License 2.0
 #### Used by
 
 - [gh-bofh-rs]( https://github.com/AliSajid/gh-bofh-rs ) 1.2.1-next.1
+- [anes]( https://github.com/zrzka/anes-rs ) 0.1.6
+- [half]( https://github.com/starkat99/half-rs ) 2.4.1
+- [itoa]( https://github.com/dtolnay/itoa ) 1.0.14
 
 #### License
 
@@ -2480,6 +2505,21 @@ distributed under the License is distributed on an "AS IS" BASIS,
 WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
+
+```
+
+### Apache-2.0
+
+Apache License 2.0
+
+#### Used by
+
+- [half]( https://github.com/starkat99/half-rs ) 2.4.1
+
+#### License
+
+```text
+MIT OR Apache-2.0
 
 ```
 
@@ -2630,6 +2670,9 @@ MIT License
 #### Used by
 
 - [difflib]( https://github.com/DimaKudosh/difflib ) 0.4.0
+- [plotters-backend]( https://github.com/plotters-rs/plotters ) 0.3.7
+- [plotters-svg]( https://github.com/plotters-rs/plotters.git ) 0.3.7
+- [plotters]( https://github.com/plotters-rs/plotters ) 0.3.7
 
 #### License
 
@@ -2652,7 +2695,47 @@ MIT License
 
 #### Used by
 
+- [is-terminal]( https://github.com/sunfishcode/is-terminal ) 0.4.13
+
+#### License
+
+```text
+Permission is hereby granted, free of charge, to any
+person obtaining a copy of this software and associated
+documentation files (the "Software"), to deal in the
+Software without restriction, including without
+limitation the rights to use, copy, modify, merge,
+publish, distribute, sublicense, and/or sell copies of
+the Software, and to permit persons to whom the Software
+is furnished to do so, subject to the following
+conditions:
+
+The above copyright notice and this permission notice
+shall be included in all copies or substantial portions
+of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF
+ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED
+TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A
+PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT
+SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
+CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
+OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR
+IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
+DEALINGS IN THE SOFTWARE.
+
+```
+
+### MIT
+
+MIT License
+
+#### Used by
+
+- [csv-core]( https://github.com/BurntSushi/rust-csv ) 0.1.11
+- [csv]( https://github.com/BurntSushi/rust-csv ) 1.3.1
 - [memchr]( https://github.com/BurntSushi/memchr ) 2.7.4
+- [walkdir]( https://github.com/BurntSushi/walkdir ) 2.5.0
 
 #### License
 
@@ -2724,7 +2807,82 @@ MIT License
 
 #### Used by
 
+- [same-file]( https://github.com/BurntSushi/same-file ) 1.0.6
+- [winapi-util]( https://github.com/BurntSushi/winapi-util ) 0.1.9
+
+#### License
+
+```text
+The MIT License (MIT)
+
+Copyright (c) 2017 Andrew Gallant
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.
+
+```
+
+### MIT
+
+MIT License
+
+#### Used by
+
+- [oorandom]( https://hg.sr.ht/~icefox/oorandom ) 11.1.4
+
+#### License
+
+```text
+The MIT License (MIT)
+
+Copyright (c) 2019 Simon Heath
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+```
+
+### MIT
+
+MIT License
+
+#### Used by
+
+- [csv-core]( https://github.com/BurntSushi/rust-csv ) 0.1.11
+- [csv]( https://github.com/BurntSushi/rust-csv ) 1.3.1
 - [memchr]( https://github.com/BurntSushi/memchr ) 2.7.4
+- [same-file]( https://github.com/BurntSushi/same-file ) 1.0.6
+- [walkdir]( https://github.com/BurntSushi/walkdir ) 2.5.0
+- [winapi-util]( https://github.com/BurntSushi/winapi-util ) 0.1.9
 
 #### License
 

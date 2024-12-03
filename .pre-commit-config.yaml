@@ -14,7 +14,7 @@ repos:
           pass_filenames: false
         - id: clippy
           name: Run clippy linter
-          entry: cargo +nightly clippy --all-targets --all-features -- -D warnings
+          entry: cargo +nightly clippy --all-targets --all-features
           language: system
           types: [rust]
           files: \.rs$

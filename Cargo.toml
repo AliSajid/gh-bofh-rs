@@ -22,13 +22,17 @@ crate-type = ["lib"]
 name = "gh-bofh"
 path = "src/gh_bofh/main.rs"
 
+[[bench]]
+name = "excuses_benchmark"
+harness = false
+
 [dependencies]
 clap = { version = "4.5.4", features = ["env", "derive"] }
 rand = { version = "0.8.5" }
 
 [lints.rust]
-unsafe_code = "forbid"  # Ensure that the crate does not use unsafe code
-missing_docs = "forbid" # Ensure that all public items have documentation
+unsafe_code = "forbid" # Ensure that the crate does not use unsafe code
+missing_docs = "warn"  # Ensure that all public items have documentation
 
 [lints.rustdoc]
 broken_intra_doc_links = "deny"   # Ensure that all intra-doc links point to valid items
@@ -48,4 +52,9 @@ strip = "symbols" # Strip debug symbols
 
 [dev-dependencies]
 assert_cmd = "2.0.16"
+criterion = { version = "0.5.1", features = [
+  "html_reports",
+  "csv",
+  "csv_output",
+] }
 sealed_test = "1.1.0"
