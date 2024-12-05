@@ -24,7 +24,7 @@ jobs:
             - uses: dtolnay/rust-toolchain@315e265cd78dad1e1dcf3a5074f6d6c47029d5aa # nightly
               with:
                 components: llvm-tools-preview
-            - uses: taiki-e/install-action@6aa8b420a527920162babdd71d780f9e5b3b4bc8 # v2.46.1
+            - uses: taiki-e/install-action@f635080d9c6d032e2de5576897c6878b7dd4c4a9 # v2.46.2
               with:
                 tool: cargo-llvm-cov,nextest
             - name: Collect coverage data (including doctests)
@@ -33,7 +33,7 @@ jobs:
                 cargo llvm-cov --no-report --doc
                 cargo llvm-cov report --doctests --lcov --output-path lcov.info
             - name: Upload to codecov.io
-              uses: codecov/codecov-action@015f24e6818733317a2da2edd6290ab26238649a # v5.0.7
+              uses: codecov/codecov-action@7f8b4b4bde536c465e797be725718b88c5d95e0e # v5.1.1
               with:
                 file: lcov.info
                 token: ${{ secrets.CODECOV_TOKEN }}
