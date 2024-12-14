@@ -26,9 +26,9 @@ jobs:
             - name: Checkout
               uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
             - name: Install Rust
-              uses: dtolnay/rust-toolchain@315e265cd78dad1e1dcf3a5074f6d6c47029d5aa # stable
+              uses: dtolnay/rust-toolchain@a54c7afa936fefeb4456b2dd8068152669aa8203 # stable
             - name: Install cargo-audit
-              uses: taiki-e/install-action@a2ff97ae7a403b9e691f3d5d5e214415068a681b # v2.46.7
+              uses: taiki-e/install-action@e523301c9af289ba196edd3ab08abdece06107d2 # v2.46.9
               with:
                 tool: cargo-audit
             - name: Security Audit
