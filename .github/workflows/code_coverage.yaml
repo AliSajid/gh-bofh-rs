@@ -11,11 +11,11 @@ jobs:
         name: Generate Coverage
         runs-on: ubuntu-latest
         container:
-            image: xd009642/tarpaulin:develop-nightly@sha256:6f3ed54d605cd594cda58e827dc2792db19065ef294922031901d0552642b879
+            image: xd009642/tarpaulin:develop-nightly@sha256:9eaeedabe0e65cd5ca1457f00fa22d64752f22c44221fa31a657fc1d931cad28
             options: --security-opt seccomp=unconfined
         steps:
             - name: Harden Runner
-              uses: step-security/harden-runner@c95a14d0e5bab51a9f56296a4eb0e416910cd350 # v2.10.3
+              uses: step-security/harden-runner@cb605e52c26070c328afc4562f0b4ada7618a84e # v2.10.4
               with:
                 egress-policy: audit
             - name: Checkout repository
