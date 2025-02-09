@@ -51,10 +51,10 @@ panic = "abort"   # Abort on panic
 strip = "symbols" # Strip debug symbols
 
 [dev-dependencies]
-assert_cmd = "2.0.16"
-criterion = { version = "0.5.1", features = [
+assert_cmd = "=2.0.16"
+criterion = { version = "=0.5.1", features = [
   "html_reports",
   "csv",
   "csv_output",
 ] }
-sealed_test = "1.1.0"
+sealed_test = "=1.1.0"
