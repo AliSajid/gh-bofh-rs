@@ -11,7 +11,7 @@ jobs:
         name: Generate Coverage
         runs-on: ubuntu-latest
         container:
-            image: xd009642/tarpaulin:develop-nightly@sha256:c8a9bc642a2f982da8e248bdf1a922e6dcf6705dea9dfb89ec389ac1a6540cd7
+            image: xd009642/tarpaulin:develop-nightly@sha256:0564c8293d2144323b37d4bb2fe902d0544ba352c9c973359c7a8dfe1855a641
             options: --security-opt seccomp=unconfined
         steps:
             - name: Harden Runner
@@ -24,7 +24,7 @@ jobs:
             - uses: dtolnay/rust-toolchain@c5a29ddb4d9d194e7c84ec8c3fba61b1c31fee8c # nightly
               with:
                 components: llvm-tools-preview
-            - uses: taiki-e/install-action@54b836426b3fa9aef432e760885ea0419ab50dab # v2.48.15
+            - uses: taiki-e/install-action@69a1d2b89159ed17808a164a105bb839bb1f0ad6 # v2.48.17
               with:
                 tool: cargo-llvm-cov,nextest
             - name: Collect coverage data (including doctests)
