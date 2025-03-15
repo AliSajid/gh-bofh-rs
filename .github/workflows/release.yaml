@@ -58,7 +58,7 @@ jobs:
               if: runner.os == 'Linux' && !matrix.build.cross
               run: sudo apt install musl-tools mingw-w64
             - name: Install Rust toolchain
-              uses: dtolnay/rust-toolchain@c5a29ddb4d9d194e7c84ec8c3fba61b1c31fee8c # master
+              uses: dtolnay/rust-toolchain@888c2e1ea69ab0d4330cbf0af1ecc7b68f368cc1 # master
               id: rust-toolchain
               with:
                 toolchain: stable
@@ -66,7 +66,7 @@ jobs:
             - name: Cache dependencies
               uses: Swatinem/rust-cache@f0deed1e0edfc6a9be95417288c0e1099b1eeec3 # v2.7.7
             - name: Install cross
-              uses: taiki-e/install-action@e10e24b7664da3815cd5c17ed3865fbcd6cc1ed9 # v2.49.23
+              uses: taiki-e/install-action@0f58b6a196e0d71c72fd459ab8fd8b228f85f669 # v2.49.24
               with:
                 tool: cross
             - name: Configure cross
@@ -134,7 +134,7 @@ jobs:
             - name: Install dependencies
               run: sudo apt install tree
             - name: Install semantic-release-cargo
-              uses: taiki-e/install-action@e10e24b7664da3815cd5c17ed3865fbcd6cc1ed9 # v2.49.23
+              uses: taiki-e/install-action@0f58b6a196e0d71c72fd459ab8fd8b228f85f669 # v2.49.24
               with:
                 tool: semantic-release-cargo@${{env.SEMREL_RUST_VERSION}}
             - name: Download release artifacts
@@ -155,7 +155,7 @@ jobs:
             - name: Move attestation to dist
               run: mv ${{steps.attestation.outputs.bundle-path}} dist/attestation.jsonl
             - name: Semantic Release
-              uses: cycjimmy/semantic-release-action@b1b432f13acb7768e0c8efdec416d363a57546f2 # v4.1.1
+              uses: cycjimmy/semantic-release-action@0a51e81a6baff2acad3ee88f4121c589c73d0f0e # v4.2.0
               id: semantic
               with:
                 semantic_version: 24.0.0
