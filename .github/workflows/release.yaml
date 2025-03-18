@@ -58,7 +58,7 @@ jobs:
               if: runner.os == 'Linux' && !matrix.build.cross
               run: sudo apt install musl-tools mingw-w64
             - name: Install Rust toolchain
-              uses: dtolnay/rust-toolchain@888c2e1ea69ab0d4330cbf0af1ecc7b68f368cc1 # master
+              uses: dtolnay/rust-toolchain@56f84321dbccf38fb67ce29ab63e4754056677e0 # master
               id: rust-toolchain
               with:
                 toolchain: stable
@@ -66,7 +66,7 @@ jobs:
             - name: Cache dependencies
               uses: Swatinem/rust-cache@f0deed1e0edfc6a9be95417288c0e1099b1eeec3 # v2.7.7
             - name: Install cross
-              uses: taiki-e/install-action@62730e3d4f6bd81d824694e963e06d7153968c93 # v2.49.29
+              uses: taiki-e/install-action@37bdc826eaedac215f638a96472df572feab0f9b # v2.49.30
               with:
                 tool: cross
             - name: Configure cross
@@ -134,11 +134,11 @@ jobs:
             - name: Install dependencies
               run: sudo apt install tree
             - name: Install semantic-release-cargo
-              uses: taiki-e/install-action@62730e3d4f6bd81d824694e963e06d7153968c93 # v2.49.29
+              uses: taiki-e/install-action@37bdc826eaedac215f638a96472df572feab0f9b # v2.49.30
               with:
                 tool: semantic-release-cargo@${{env.SEMREL_RUST_VERSION}}
             - name: Download release artifacts
-              uses: actions/download-artifact@cc203385981b70ca67e1cc392babf9cc229d5806 # v4.1.9
+              uses: actions/download-artifact@b14cf4c92620c250e1c074ab0a5800e37df86765 # v4.2.0
               with:
                 path: artifacts
             - name: ls artifacts
