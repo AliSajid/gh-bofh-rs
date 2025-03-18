@@ -21,10 +21,10 @@ jobs:
             - name: Checkout repository
               uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
             # Nightly Rust is required for cargo llvm-cov --doc.
-            - uses: dtolnay/rust-toolchain@888c2e1ea69ab0d4330cbf0af1ecc7b68f368cc1 # nightly
+            - uses: dtolnay/rust-toolchain@56f84321dbccf38fb67ce29ab63e4754056677e0 # nightly
               with:
                 components: llvm-tools-preview
-            - uses: taiki-e/install-action@62730e3d4f6bd81d824694e963e06d7153968c93 # v2.49.29
+            - uses: taiki-e/install-action@37bdc826eaedac215f638a96472df572feab0f9b # v2.49.30
               with:
                 tool: cargo-llvm-cov,nextest
             - name: Collect coverage data (including doctests)
