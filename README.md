@@ -99,6 +99,11 @@ The architecture documentation can be found in the project repository under the 
 The security requirements and expectations documentation can be found in the project repository under the following URL:  
 [Security Requirements Documentation](SECURITY_REQUIREMENTS.md)
 
+## Security Assurance Case
+
+The security assurance case document can be found in the project repository under the following URL:  
+[Security Assurance Case Documentation](SECURITY_ASSURANCE.md)
+
 ## License
 
 This project is dual-licensed under the [MIT](LICENSE-MIT) and [Apache 2.0](LICENSE-APACHE) licenses.
