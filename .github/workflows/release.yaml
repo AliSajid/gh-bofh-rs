@@ -64,7 +64,7 @@ jobs:
                 toolchain: stable
                 target: ${{ matrix.build.target }}
             - name: Cache dependencies
-              uses: Swatinem/rust-cache@f0deed1e0edfc6a9be95417288c0e1099b1eeec3 # v2.7.7
+              uses: Swatinem/rust-cache@9d47c6ad4b02e050fd481d890b2ea34778fd09d6 # v2.7.8
             - name: Install cross
               uses: taiki-e/install-action@37bdc826eaedac215f638a96472df572feab0f9b # v2.49.30
               with:
@@ -88,7 +88,7 @@ jobs:
                 mkdir dist
                 cp target/${{ matrix.build.target }}/release/${{ matrix.bin }} dist/${{ matrix.bin }}-${{ matrix.build.target }}
             - name: Upload release artifacts
-              uses: actions/upload-artifact@4cec3d8aa04e39d1a68397de0c4cd6fb9dce8ec1 # v4.6.1
+              uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
               with:
                 name: ${{ matrix.build.target }}
                 path: |
@@ -138,7 +138,7 @@ jobs:
               with:
                 tool: semantic-release-cargo@${{env.SEMREL_RUST_VERSION}}
             - name: Download release artifacts
-              uses: actions/download-artifact@b14cf4c92620c250e1c074ab0a5800e37df86765 # v4.2.0
+              uses: actions/download-artifact@95815c38cf2ff2164869cbab79da8d1f422bc89e # v4.2.1
               with:
                 path: artifacts
             - name: ls artifacts
