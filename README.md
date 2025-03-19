@@ -87,6 +87,13 @@ This project is currently being maintained. We are happy to include more modern 
 
 If you want to contribute to this project, please read the [CONTRIBUTING.md](CONTRIBUTING.md) file.
 
+## Detailed documentation
+
+### High Level Overview
+
+The architecture documentation can be found in the project repository under the following URL:  
+[Architecture Documentation](https://github.com/your-username/gh-bofh/blob/main/ARCHITECTURE.md)
+
 ## License
 
 This project is dual-licensed under the [MIT](LICENSE-MIT) and [Apache 2.0](LICENSE-APACHE) licenses.
