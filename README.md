@@ -92,7 +92,12 @@ If you want to contribute to this project, please read the [CONTRIBUTING.md](CON
 ### High Level Overview
 
 The architecture documentation can be found in the project repository under the following URL:  
-[Architecture Documentation](https://github.com/your-username/gh-bofh/blob/main/ARCHITECTURE.md)
+[Architecture Documentation](ARCHITECTURE.md)
+
+### Security Requirements
+
+The security requirements and expectations documentation can be found in the project repository under the following URL:  
+[Security Requirements Documentation](SECURITY_REQUIREMENTS.md)
 
 ## License
 
