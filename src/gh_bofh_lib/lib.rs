@@ -73,7 +73,7 @@ pub use excuses::{
     CLASSIC,
     MODERN,
 };
-use rand::seq::SliceRandom;
+use rand::prelude::IndexedRandom;
 
 type ClassicExcuse = &'static str;
 type ModernExcuse = &'static str;
@@ -93,7 +93,7 @@ type ModernExcuse = &'static str;
 #[must_use]
 pub fn random_classic() -> ClassicExcuse {
     CLASSIC
-        .choose(&mut rand::thread_rng())
+        .choose(&mut rand::rng())
         .unwrap_or(&"No excuse found, try again later")
 }
 
@@ -113,7 +113,7 @@ pub fn random_classic() -> ClassicExcuse {
 #[must_use]
 pub fn random_modern() -> ModernExcuse {
     MODERN
-        .choose(&mut rand::thread_rng())
+        .choose(&mut rand::rng())
         .unwrap_or(&"Excuse engine not initialized. Please try again later.")
 }
 

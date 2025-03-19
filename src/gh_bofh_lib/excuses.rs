@@ -16,10 +16,10 @@
 ///
 /// ```
 /// use gh_bofh_lib::excuses::CLASSIC;
-/// use rand::seq::SliceRandom;
+/// use rand::prelude::IndexedRandom;
 ///
 /// // Print a random excuse
-/// let excuse = CLASSIC.choose(&mut rand::thread_rng()).unwrap();
+/// let excuse = CLASSIC.choose(&mut rand::rng()).unwrap();
 /// println!("Excuse: {}", excuse);
 /// ```
 ///
@@ -525,10 +525,10 @@ pub const CLASSIC: [&str; 467] = [
 ///
 /// ```
 /// use gh_bofh_lib::excuses::MODERN;
-/// use rand::seq::SliceRandom;
+/// use rand::prelude::IndexedRandom;
 ///
 /// // Print a random excuse
-/// let excuse = MODERN.choose(&mut rand::thread_rng()).unwrap();
+/// let excuse = MODERN.choose(&mut rand::rng()).unwrap();
 /// println!("Excuse: {}", excuse);
 /// ```
 ///
