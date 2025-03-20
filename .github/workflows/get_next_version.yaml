@@ -10,8 +10,7 @@ on:
             new-release-published:
                 description: Indicates whether a new release will be published. The value is a string, either 'true' or 'false'.
                 value: ${{ jobs.get-next-version.outputs.new-release-published }}
-permissions:
-    contents: read
+
 jobs:
     get-next-version:
         name: Get next release version
