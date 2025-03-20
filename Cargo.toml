@@ -5,7 +5,7 @@
 
 [package]
 name = "gh-bofh-rs"
-version = "1.2.1-next.1"
+version = "1.2.1-next.2"
 edition = "2021"
 readme = "README.md"
 description = "A Rust implementation of the classic `bofh` command as a GitHub CLI extension."
@@ -22,21 +22,39 @@ crate-type = ["lib"]
 name = "gh-bofh"
 path = "src/gh_bofh/main.rs"
 
+[[bench]]
+name = "excuses_benchmark"
+harness = false
+
 [dependencies]
 clap = { version = "4.5.4", features = ["env", "derive"] }
-rand = { version = "0.8.5" }
+rand = { version = "0.9.0" }
+
+[lints.rust]
+unsafe_code = "forbid" # Ensure that the crate does not use unsafe code
+missing_docs = "warn"  # Ensure that all public items have documentation
+
+[lints.rustdoc]
+broken_intra_doc_links = "deny"   # Ensure that all intra-doc links point to valid items
+invalid_rust_codeblocks = "deny"  # Ensure that all rust code blocks are valid
+redundant_explicit_links = "deny" # Ensure that all explicit links are necessary
 
 [profile.dev]
-opt-level = 1
-debug = true
+opt-level = 1 # Do not optimize
+debug = true  # Generate debug symbols
 
 [profile.release]
-opt-level = 'z'   # Optimize for size.
-lto = true        # Enable Link Time Optimisation
-codegen-units = 1 # Reduced to increase optimisations.
-panic = 'abort'   # Abort on panic
-strip = "symbols" # Strip symbols from binary
+opt-level = 'z'   # Optimize for size
+lto = true        # Enable link-time optimization
+codegen-units = 1 # Compile the whole crate at once
+panic = "abort"   # Abort on panic
+strip = "symbols" # Strip debug symbols
 
 [dev-dependencies]
-rstest = "0.23.0"
-sealed_test = "1.1.0"
+assert_cmd = "=2.0.16"
+criterion = { version = "=0.5.1", features = [
+  "html_reports",
+  "csv",
+  "csv_output",
+] }
+sealed_test = "=1.1.0"

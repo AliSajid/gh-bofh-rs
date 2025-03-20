@@ -1,9 +1,30 @@
 // Copyright (c) 2024
-// SPDX-FileCopyrightText: 2023 - 2024 Ali Sajid Imami
+// SPDX-FileCopyrightText: 2023 - 2025 Ali Sajid Imami
 //
 // SPDX-License-Identifier: Apache-2.0
 // SPDX-License-Identifier: MIT
 
+//! This crate stores the list of excuses that the
+//! application pulls from.
+
+/// A list of classic Bastard Operator From Hell (BOFH) style excuses.
+///
+/// This constant provides a collection of humorous and fictional excuses
+/// that can be used to explain away technical issues in a light-hearted manner.
+///
+/// # Examples
+///
+/// ```
+/// use gh_bofh_lib::excuses::CLASSIC;
+/// use rand::prelude::IndexedRandom;
+///
+/// // Print a random excuse
+/// let excuse = CLASSIC.choose(&mut rand::rng()).unwrap();
+/// println!("Excuse: {}", excuse);
+/// ```
+///
+/// The `CLASSIC` array contains 467 different excuses, ensuring a wide variety
+/// of options to choose from.
 pub const CLASSIC: [&str; 467] = [
     "clock speed",
     "solar flares",
@@ -495,6 +516,24 @@ pub const CLASSIC: [&str; 467] = [
     "Your machine had the fuses in backwards.",
 ];
 
+/// A list of modern Bastard Operator From Hell (BOFH) style excuses.
+///
+/// This constant provides a collection of humorous and fictional excuses
+/// that can be used to explain away technical issues in a light-hearted manner.
+///
+/// # Examples
+///
+/// ```
+/// use gh_bofh_lib::excuses::MODERN;
+/// use rand::prelude::IndexedRandom;
+///
+/// // Print a random excuse
+/// let excuse = MODERN.choose(&mut rand::rng()).unwrap();
+/// println!("Excuse: {}", excuse);
+/// ```
+///
+/// The `MODERN` array contains 105 different excuses, ensuring a wide variety
+/// of options to choose from.
 pub const MODERN: [&str; 105] = [
     "Predictive analytics model failed to foresee this error",
     "AI heuristic malfunction",

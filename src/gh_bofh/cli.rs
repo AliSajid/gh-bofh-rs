@@ -1,23 +1,60 @@
 // Copyright (c) 2024
-// SPDX-FileCopyrightText: 2023 - 2024 Ali Sajid Imami
+// SPDX-FileCopyrightText: 2023 - 2025 Ali Sajid Imami
 //
 // SPDX-License-Identifier: Apache-2.0
 // SPDX-License-Identifier: MIT
 
 // CLI Specification for clap
-
 use clap::{
     arg,
     Parser,
     ValueEnum,
 };
 
+/// An enum representing the type of BOFH excuse to generate.
+///
+/// This [`enum`](ExcuseType) is used to specify the type of BOFH excuse to
+/// generate. The two variants of this enum are [`Classic`](ExcuseType::Classic)
+/// and [`Modern`](ExcuseType::Modern).
+///
+/// The [`Classic`](ExcuseType::Classic) variant represents a 90s style BOFH
+/// excuse, while the [`Modern`](ExcuseType::Modern) variant represents a more
+/// modern BOFH excuse.
+///
+/// The ultimate purpose of this `enum` is to contrain the available valid
+/// options for the [`Cli`] struct, which is used to parse the command line
+/// arguments.
+///
+/// # Examples
+///
+/// ```
+/// use gh_bofh::cli::ExcuseType;
+///
+/// let classic = ExcuseType::Classic;
+/// let modern = ExcuseType::Modern;
+/// ```
 #[derive(Debug, Clone, Copy, ValueEnum, PartialEq, Eq)]
 pub enum ExcuseType {
+    // The classic 90s style BOFH excuse
     Classic,
+    // A modern BOFH excuse for the 21st century
     Modern,
 }
 
+/// The CLI struct for the `gh-bofh` binary.
+///
+/// This struct is used to parse the command line arguments for the `gh-bofh`
+/// binary. The struct is used by the [`clap`](https://docs.rs/clap) library to generate the command line interface
+/// for the binary.
+///
+/// The struct defines the valid and available command line arguments for the
+/// `gh-bofh` binary.
+///
+/// ## Command Line Arguments
+///
+/// The `Cli` struct defines the following command line arguments:
+///
+/// * `-t/--type`: The type of excuse to generate. The default is classic
 #[derive(Parser, Debug)]
 #[command(
     author,

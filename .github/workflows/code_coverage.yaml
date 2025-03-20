@@ -1,9 +1,8 @@
-# SPDX-FileCopyrightText: 2023 - 2024 Ali Sajid Imami
+---
+# SPDX-FileCopyrightText: 2023 - 2025 Ali Sajid Imami
 #
 # SPDX-License-Identifier: Apache-2.0
 # SPDX-License-Identifier: MIT
-
----
 name: Code Coverage
 on:
     workflow_call:
@@ -12,27 +11,28 @@ jobs:
         name: Generate Coverage
         runs-on: ubuntu-latest
         container:
-            image: xd009642/tarpaulin:develop-nightly@sha256:7f0d65f160c70f5f94bc9dd6dbb2150bf080eaddbc9adaa3893d3aa85f3e4ebc
+            image: xd009642/tarpaulin:develop-nightly@sha256:3d3435cef8fc87da81aaac02faa0f4f4c76a6bd67925b1988d7474c5ee86e5a1
             options: --security-opt seccomp=unconfined
         steps:
+            - name: Harden Runner
+              uses: step-security/harden-runner@4d991eb9b905ef189e4c376166672c3f2f230481 # v2.11.0
+              with:
+                egress-policy: audit
             - name: Checkout repository
               uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
-            # Nightly Rust is required for cargo llvm-cov --doc.
-            - uses: dtolnay/rust-toolchain@nightly
+
+            - uses: dtolnay/rust-toolchain@56f84321dbccf38fb67ce29ab63e4754056677e0 # nightly
               with:
+                toolchain: nightly
                 components: llvm-tools-preview
-            - uses: taiki-e/install-action@2b51c05cf7315a16dcec651726da87c70e45b990 # v2.45.7
+            - uses: taiki-e/install-action@37bdc826eaedac215f638a96472df572feab0f9b # v2.49.30
               with:
-                tool: cargo-llvm-cov,nextest
+                tool: cargo-llvm-cov,nextest,cargo-tarpaulin
             - name: Collect coverage data (including doctests)
-              run: |
-                cargo llvm-cov --no-report nextest --config-file nextest.toml
-                cargo llvm-cov --no-report --doc
-                cargo llvm-cov report --doctests --lcov --output-path lcov.info
+              run: cargo +nightly tarpaulin --verbose --all-features --workspace --timeout 120 --out xml
             - name: Upload to codecov.io
-              uses: codecov/codecov-action@015f24e6818733317a2da2edd6290ab26238649a # v5.0.7
+              uses: codecov/codecov-action@0565863a31f2c772f9f0395002a31e3f06189574 # v5.4.0
               with:
-                file: lcov.info
                 token: ${{ secrets.CODECOV_TOKEN }}
                 verbose: true
                 working-directory: .
