@@ -23,6 +23,7 @@ jobs:
             # Nightly Rust is required for cargo llvm-cov --doc.
             - uses: dtolnay/rust-toolchain@56f84321dbccf38fb67ce29ab63e4754056677e0 # nightly
               with:
+                toolchain: nightly
                 components: llvm-tools-preview
             - uses: taiki-e/install-action@351cce3d3afa3dbd66bbe6d30df1d481b1448522 # v2.49.32
               with:
