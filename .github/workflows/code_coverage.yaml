@@ -20,23 +20,19 @@ jobs:
                 egress-policy: audit
             - name: Checkout repository
               uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
-            # Nightly Rust is required for cargo llvm-cov --doc.
+
             - uses: dtolnay/rust-toolchain@56f84321dbccf38fb67ce29ab63e4754056677e0 # nightly
               with:
                 toolchain: nightly
                 components: llvm-tools-preview
-            - uses: taiki-e/install-action@351cce3d3afa3dbd66bbe6d30df1d481b1448522 # v2.49.32
+            - uses: taiki-e/install-action@37bdc826eaedac215f638a96472df572feab0f9b # v2.49.30
               with:
-                tool: cargo-llvm-cov,nextest
+                tool: cargo-llvm-cov,nextest,cargo-tarpaulin
             - name: Collect coverage data (including doctests)
-              run: |
-                cargo llvm-cov --no-report nextest --config-file nextest.toml
-                cargo llvm-cov --no-report --doc
-                cargo llvm-cov report --doctests --lcov --output-path lcov.info
+              run: cargo +nightly tarpaulin --verbose --all-features --workspace --timeout 120 --out xml
             - name: Upload to codecov.io
               uses: codecov/codecov-action@0565863a31f2c772f9f0395002a31e3f06189574 # v5.4.0
               with:
-                file: lcov.info
                 token: ${{ secrets.CODECOV_TOKEN }}
                 verbose: true
                 working-directory: .
