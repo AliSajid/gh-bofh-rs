@@ -23,7 +23,7 @@ jobs:
               with:
                 disable-sudo: true
                 egress-policy: block
-                allowed-endpoints: |
+                allowed-endpoints: >
                     github.com:443
                     api.github.com:443
                     registry.npmjs.org:443
