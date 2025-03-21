@@ -13,6 +13,7 @@ jobs:
         container:
             image: xd009642/tarpaulin:develop-nightly@sha256:3d3435cef8fc87da81aaac02faa0f4f4c76a6bd67925b1988d7474c5ee86e5a1
             options: --security-opt seccomp=unconfined
+
         steps:
             - name: Harden Runner
               uses: step-security/harden-runner@4d991eb9b905ef189e4c376166672c3f2f230481 # v2.11.0
@@ -25,11 +26,15 @@ jobs:
               with:
                 toolchain: nightly
                 components: llvm-tools-preview
-            - uses: taiki-e/install-action@351cce3d3afa3dbd66bbe6d30df1d481b1448522 # v2.49.32
+
+            - name: Install necessary tools
+              uses: taiki-e/install-action@351cce3d3afa3dbd66bbe6d30df1d481b1448522 # v2.49.32
               with:
                 tool: cargo-llvm-cov,nextest,cargo-tarpaulin
+
             - name: Collect coverage data (including doctests)
               run: cargo +nightly tarpaulin --verbose --all-features --workspace --timeout 120 --out xml
+
             - name: Upload to codecov.io
               uses: codecov/codecov-action@0565863a31f2c772f9f0395002a31e3f06189574 # v5.4.0
               with:
