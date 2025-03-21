@@ -9,7 +9,7 @@ SPDX-License-Identifier: MIT
 
 ## **Overview**
 
-The `gh-bofh-rs` project is a GitHub CLI extension that generates random BOFH (Bastard Operator From Hell) excuses. The project consists of two main components:
+The `gh-bofh` project is a GitHub CLI extension that generates random BOFH (Bastard Operator From Hell) excuses. The project consists of two main components:
 
 1. **Library (`gh_bofh_lib`)**: A Rust library that provides the core functionality for generating random excuses and contains a list of pre-defined excuses.
 2. **CLI (`gh-bofh`)**: A binary crate that acts as a command-line interface for the library, allowing users to generate excuses via the command line.
