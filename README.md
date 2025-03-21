@@ -7,24 +7,24 @@ SPDX-License-Identifier: MIT
 
 # A `gh` plugin to generate BOFH excuses
 
-[![GitHub release (latest by date)](https://img.shields.io/github/v/release/AliSajid/gh-bofh-rs)](https://github.com/AliSajid/gh-bofh-rs/releases/latest)
-[![GitHub tag (latest SemVer)](https://img.shields.io/github/v/tag/AliSajid/gh-bofh-rs)](https://github.com/AliSajid/gh-bofh-rs/releases/latest)
-[![Crates.io Version](https://img.shields.io/crates/v/gh-bofh-rs)](https://crates.io/crates/gh-bofh-rs)
-[![Crates.io Size](https://img.shields.io/crates/size/gh-bofh-rs)](https://crates.io/crates/gh-bofh-rs)
+[![GitHub release (latest by date)](https://img.shields.io/github/v/release/AliSajid/gh-bofh)](https://github.com/AliSajid/gh-bofh/releases/latest)
+[![GitHub tag (latest SemVer)](https://img.shields.io/github/v/tag/AliSajid/gh-bofh)](https://github.com/AliSajid/gh-bofh/releases/latest)
+[![Crates.io Version](https://img.shields.io/crates/v/gh-bofh)](https://crates.io/crates/gh-bofh)
+[![Crates.io Size](https://img.shields.io/crates/size/gh-bofh)](https://crates.io/crates/gh-bofh)
 ![Maintenance](https://img.shields.io/maintenance/yes/2025)
-![OSS Lifecycle](https://img.shields.io/osslifecycle?file_url=https%3A%2F%2Fraw.githubusercontent.com%2FAliSajid%2Fgh-bofh-rs%2Fmain%2FOSSMETADATA)
+![OSS Lifecycle](https://img.shields.io/osslifecycle?file_url=https%3A%2F%2Fraw.githubusercontent.com%2FAliSajid%2Fgh-bofh%2Fmain%2FOSSMETADATA)
 
-[![Continuous integration](https://github.com/AliSajid/gh-bofh-rs/actions/workflows/ci.yaml/badge.svg?branch=main&event=push)](https://github.com/AliSajid/gh-bofh-rs/actions/workflows/ci.yaml)
-[![codecov](https://codecov.io/gh/AliSajid/gh-bofh-rs/graph/badge.svg?token=rrsVYywjlx)](https://codecov.io/gh/AliSajid/gh-bofh-rs)
-[![Security Audit](https://github.com/AliSajid/gh-bofh-rs/actions/workflows/audit.yaml/badge.svg?branch=main)](https://github.com/AliSajid/gh-bofh-rs/actions/workflows/audit.yaml)
-[![GitHub issues](https://img.shields.io/github/issues/AliSajid/gh-bofh-rs)](https://github.com/AliSajid/gh-bofh-rs/issues)
+[![Continuous integration](https://github.com/AliSajid/gh-bofh/actions/workflows/ci.yaml/badge.svg?branch=main&event=push)](https://github.com/AliSajid/gh-bofh/actions/workflows/ci.yaml)
+[![codecov](https://codecov.io/gh/AliSajid/gh-bofh/graph/badge.svg?token=rrsVYywjlx)](https://codecov.io/gh/AliSajid/gh-bofh)
+[![Security Audit](https://github.com/AliSajid/gh-bofh/actions/workflows/audit.yaml/badge.svg?branch=main)](https://github.com/AliSajid/gh-bofh/actions/workflows/audit.yaml)
+[![GitHub issues](https://img.shields.io/github/issues/AliSajid/gh-bofh)](https://github.com/AliSajid/gh-bofh/issues)
 
-[![Crates.io License](https://img.shields.io/crates/l/gh-bofh-rs)](https://crates.io/crates/gh-bofh-rs)
-[![REUSE Compliance](https://img.shields.io/reuse/compliance/github.com%2FAliSajid%2Fgh-bofh-rs)](https://api.reuse.software/info/github.com/AliSajid/gh-bofh-rs)
+[![Crates.io License](https://img.shields.io/crates/l/gh-bofh)](https://crates.io/crates/gh-bofh)
+[![REUSE Compliance](https://img.shields.io/reuse/compliance/github.com%2FAliSajid%2Fgh-bofh)](https://api.reuse.software/info/github.com/AliSajid/gh-bofh)
 [![OpenSSF Best Practices](https://www.bestpractices.dev/projects/9466/badge)](https://www.bestpractices.dev/projects/9466)
 
-[![Libraries.io SourceRank](https://img.shields.io/librariesio/sourcerank/cargo/gh-bofh-rs)](https://libraries.io/cargo/gh-bofh-rs)
-[![ClearlyDefined Score](https://img.shields.io/clearlydefined/score/crate/cratesio/-/gh-bofh-rs/1.2.0-next.1)](https://clearlydefined.io/definitions/crate/cratesio/-/gh-bofh-rs/1.2.0-next.1)
+[![Libraries.io SourceRank](https://img.shields.io/librariesio/sourcerank/cargo/gh-bofh)](https://libraries.io/cargo/gh-bofh)
+[![ClearlyDefined Score](https://img.shields.io/clearlydefined/score/crate/cratesio/-/gh-bofh/1.2.0-next.1)](https://clearlydefined.io/definitions/crate/cratesio/-/gh-bofh/1.2.0-next.1)
 
 Generate a BOFH Excuse for github-cli from the commandline as a `gh` extension.
 
@@ -42,18 +42,18 @@ Generate a BOFH Excuse for github-cli from the commandline as a `gh` extension.
 
 ```bash
 
-cargo install gh-bofh-rs
+cargo install gh-bofh
 
 ```
 
 ### From Release
 
-Download the latest release from [here](https://github.com/AliSajid/gh-bofh-rs/releases/latest) and install it using `gh extension install <path-to-release>`
+Download the latest release from [here](https://github.com/AliSajid/gh-bofh/releases/latest) and install it using `gh extension install <path-to-release>`
 
 ### From The GitHub CLI
 
 ```bash
-gh extension install AliSajid/gh-bofh-rs
+gh extension install AliSajid/gh-bofh
 ```
 
 ## Usage

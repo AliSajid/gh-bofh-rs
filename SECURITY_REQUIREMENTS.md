@@ -7,14 +7,14 @@ SPDX-License-Identifier: MIT
 
 # **Security Requirements and Expectations**
 
-This document outlines the **security requirements** for the `gh-bofh-rs` project, as well as what users can and cannot expect in terms of security from the software.
+This document outlines the **security requirements** for the `gh-bofh` project, as well as what users can and cannot expect in terms of security from the software.
 
 ---
 
 ## **What Users Can Expect**
 
 1. **No Sensitive Data Handling**:
-   - The `gh-bofh-rs` software does not handle, process, or store any sensitive or personal data. It is a simple command-line tool that generates random BOFH excuses.
+   - The `gh-bofh` software does not handle, process, or store any sensitive or personal data. It is a simple command-line tool that generates random BOFH excuses.
    - Users can expect that the software does not pose a risk to their data privacy.
 
 2. **No Network Communication**:
@@ -49,7 +49,7 @@ This document outlines the **security requirements** for the `gh-bofh-rs` projec
 
 ## **Security Requirements**
 
-The `gh-bofh-rs` software is intended to meet the following security requirements:
+The `gh-bofh` software is intended to meet the following security requirements:
 
 1. **No Data Collection**:
    - The software must not collect, store, or transmit any user data.

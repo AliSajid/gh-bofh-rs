@@ -9,7 +9,7 @@ SPDX-License-Identifier: MIT
 
 ## Supported Versions
 
-The canonical version for `gh-bofh-rs` will be the most recent release from the `main` branch. We will also support the current major version of the application in terms of security patches and issues.
+The canonical version for `gh-bofh` will be the most recent release from the `main` branch. We will also support the current major version of the application in terms of security patches and issues.
 
 | Version | Supported          |
 | ------- | ------------------ |
