@@ -26,7 +26,7 @@
 /// The `CLASSIC` array contains 467 different excuses, ensuring a wide variety
 /// of options to choose from.
 pub const CLASSIC: [&str; 467] = [
-    "clock speed",
+    "clock speed too slow",
     "solar flares",
     "electromagnetic radiation from satellite debris",
     "static from nylon underwear",
