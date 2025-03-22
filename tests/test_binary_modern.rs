@@ -48,7 +48,6 @@ fn test_binary_output_flag_short_modern() {
         .arg("-m")
         .output()
         .unwrap();
-    println!("{:?}", cmd);
     assert!(cmd.status.success());
     assert!(!String::from_utf8_lossy(&cmd.stdout).is_empty());
     assert!(String::from_utf8_lossy(&cmd.stderr).is_empty());
