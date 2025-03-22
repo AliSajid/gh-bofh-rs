@@ -27,7 +27,6 @@ fn test_binary_plain_default() {
 #[test]
 fn test_binary_output_classic() {
     let cmd = Command::cargo_bin("gh-bofh").unwrap().output().unwrap();
-    println!("{:#?}", cmd);
     assert!(cmd.status.success());
     assert!(!String::from_utf8_lossy(&cmd.stdout).is_empty());
     assert!(String::from_utf8_lossy(&cmd.stderr).is_empty());
@@ -41,7 +40,6 @@ fn test_binary_output_flag_classic() {
         .args(["--type", "classic"])
         .output()
         .unwrap();
-    println!("{:#?}", cmd);
     assert!(cmd.status.success());
     assert!(!String::from_utf8_lossy(&cmd.stdout).is_empty());
     assert!(String::from_utf8_lossy(&cmd.stderr).is_empty());
@@ -55,7 +53,6 @@ fn test_binary_output_flag_short_classic() {
         .arg("-c")
         .output()
         .unwrap();
-    println!("{:#?}", cmd);
     assert!(cmd.status.success());
     assert!(!String::from_utf8_lossy(&cmd.stdout).is_empty());
     assert!(String::from_utf8_lossy(&cmd.stderr).is_empty());
@@ -69,7 +66,6 @@ fn test_binary_output_env_var_classic() {
         .env("EXCUSE_TYPE", "classic")
         .output()
         .unwrap();
-    println!("{:#?}", cmd);
     assert!(cmd.status.success());
     assert!(!String::from_utf8_lossy(&cmd.stdout).is_empty());
     assert!(String::from_utf8_lossy(&cmd.stderr).is_empty());
