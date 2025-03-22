@@ -100,7 +100,9 @@ jobs:
                 allowed-endpoints: >
                     github.com:443
                     api.github.com:443
-                    static.rust-lang.org
+                    static.rust-lang.org:443
+                    cdn.fwupd.org:443
+                    index.crates.io:443
 
             - name: Checkout Repository
               uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
