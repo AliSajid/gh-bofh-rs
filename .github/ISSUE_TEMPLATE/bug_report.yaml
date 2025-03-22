@@ -1,0 +1,82 @@
+---
+# SPDX-FileCopyrightText: 2023 - 2025 Ali Sajid Imami
+#
+# SPDX-License-Identifier: Apache-2.0
+# SPDX-License-Identifier: MIT
+name: "Bug report"
+description: "Create a report to help us improve"
+title: "[BUG]"
+labels: ["bug"]
+assignees: ["AliSajid"]
+body:
+    - type: markdown
+      attributes:
+        value: "## Describe the bug\nA clear and concise description of what the bug is."
+    - type: textarea
+      id: description
+      attributes:
+        label: "Bug Description"
+        description: "Provide a clear and concise description of the bug."
+      validations:
+        required: true
+    - type: markdown
+      attributes:
+        value: "## To Reproduce\nSteps to reproduce the behavior:"
+    - type: textarea
+      id: reproduce_steps
+      attributes:
+        label: "Steps to Reproduce"
+        description: "List the steps to reproduce the bug."
+        value: "1. Go to '...'.\n2. Click on '...'.\n3. Scroll down to '...'.\n4. See error."
+      validations:
+        required: true
+    - type: markdown
+      attributes:
+        value: "## Expected behavior\nA clear and concise description of what you expected to happen."
+    - type: textarea
+      id: expected_behavior
+      attributes:
+        label: "Expected Behavior"
+        description: "Describe what you expected to happen."
+      validations:
+        required: true
+    - type: markdown
+      attributes:
+        value: "## Screenshots\nIf applicable, add screenshots to help explain your problem."
+    - type: textarea
+      id: screenshots
+      attributes:
+        label: "Screenshots"
+        description: "Upload screenshots if applicable."
+    - type: markdown
+      attributes:
+        value: "## System Information\nProvide details about your environment."
+    - type: input
+      id: os
+      attributes:
+        label: "Operating System"
+        description: "e.g., macOS, Linux, Windows"
+      validations:
+        required: true
+    - type: input
+      id: os_version
+      attributes:
+        label: "OS Version / Distribution"
+        description: "e.g., 10.15.7, Ubuntu 20.04, Windows 10"
+      validations:
+        required: true
+    - type: input
+      id: version
+      attributes:
+        label: "Application Version"
+        description: "e.g., 0.1.0"
+      validations:
+        required: true
+    - type: markdown
+      attributes:
+        value: "## Additional context\nAdd any other context about the problem here."
+    - type: textarea
+      id: additional_context
+      attributes:
+        label: "Additional Context"
+        description: "Any other details you want to share."
