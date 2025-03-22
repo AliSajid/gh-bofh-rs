@@ -1,4 +1,4 @@
-## [1.2.1](https://github.com/AliSajid/gh-bofh/compare/v1.2.0...v1.2.1) (2025-03-20)
+## [1.2.1-next.2](https://github.com/AliSajid/gh-bofh-rs/compare/v1.2.1-next.1...v1.2.1-next.2) (2025-03-20)
 
 
 ### Bug Fixes
