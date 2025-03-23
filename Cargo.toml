@@ -4,8 +4,8 @@
 # SPDX-License-Identifier: MIT
 
 [package]
-name = "gh-bofh-rs"
-version = "1.2.2"
+name = "gh-bofh"
+version = "1.2.2-next.1"
 edition = "2021"
 readme = "README.md"
 description = "A Rust implementation of the classic `bofh` command as a GitHub CLI extension."
