@@ -1,3 +1,11 @@
+# [1.3.0](https://github.com/AliSajid/gh-bofh/compare/v1.2.2...v1.3.0) (2025-03-23)
+
+
+### Features
+
+* add ten more classic excuses ([6d863aa](https://github.com/AliSajid/gh-bofh/commit/6d863aa58ae73963e77ec2d5fdff51522ccc8a88))
+* add ten more modern excuses ([591846e](https://github.com/AliSajid/gh-bofh/commit/591846efe3c710ab1db8f641d21bd780aa3425f3))
+
 # [1.3.0-next.1](https://github.com/AliSajid/gh-bofh/compare/v1.2.2...v1.3.0-next.1) (2025-03-23)
 
 
