@@ -1,3 +1,11 @@
+## [1.2.2-next.1](https://github.com/AliSajid/gh-bofh/compare/v1.2.1...v1.2.2-next.1) (2025-03-23)
+
+
+### Bug Fixes
+
+* remove trailing spaces from certain excuses to ensure consistent test and output response ([acf6882](https://github.com/AliSajid/gh-bofh/commit/acf6882ad8fa061a36931b8cec7f18856091c687))
+* update the length of an excuse ([5ebc5ee](https://github.com/AliSajid/gh-bofh/commit/5ebc5ee76a61af6dfe84d01d74213ee6bd0b4c6e))
+
 ## [1.2.1-next.2](https://github.com/AliSajid/gh-bofh-rs/compare/v1.2.1-next.1...v1.2.1-next.2) (2025-03-20)
 
 
