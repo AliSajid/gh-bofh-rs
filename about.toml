@@ -68,7 +68,7 @@ accepted = ["CC0-1.0"]
 # Apache-2.0: https://github.com/dtolnay/unicode-ident/LICENSE-APACHE
 # Unicode-DFS-2016: https://github.com/dtolnay/unicode-ident/LICENSE-UNICODE
 [unicode-ident]
-accepted = ["Unicode-DFS-2016"]
+accepted = ["Unicode-3.0"]
 
 [rustix.clarify]
 license = "Apache-2.0 OR (Apache-2.0 WITH LLVM-exception) OR MIT"

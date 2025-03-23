@@ -5,12 +5,12 @@
 
 [package]
 name = "gh-bofh-rs"
-version = "1.2.1"
+version = "1.2.2-next.1"
 edition = "2021"
 readme = "README.md"
 description = "A Rust implementation of the classic `bofh` command as a GitHub CLI extension."
 rust-version = "1.74.1"
-repository = "https://github.com/AliSajid/gh-bofh-rs"
+repository = "https://github.com/AliSajid/gh-bofh"
 license = "MIT OR Apache-2.0"
 
 [lib]

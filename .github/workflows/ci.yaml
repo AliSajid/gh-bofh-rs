@@ -33,8 +33,15 @@ jobs:
             - name: Harden Runner
               uses: step-security/harden-runner@4d991eb9b905ef189e4c376166672c3f2f230481 # v2.11.0
               with:
-                egress-policy: audit
-            - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+                disable-sudo: true
+                egress-policy: block
+                allowed-endpoints: >
+                    github.com:443
+                    api.github.com:443
+
+            - name: Checkout Repository
+              uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+
             - name: Check changed directories
               id: changed_dirs
               uses: dorny/paths-filter@de90cc6fb38fc0963ad72b210f1f284cd68cea36 # v3.0.2
@@ -50,6 +57,7 @@ jobs:
                     book:
                       - "guide/src/*.md"
                       - "guide/book.toml"
+
     ci:
         runs-on: ${{matrix.os}}-latest
         needs: [check_changed_dirs]
@@ -63,7 +71,7 @@ jobs:
                     - stable
                     - beta
                     - nightly
-                    - 1.70.0 # MSRV
+                    - 1.74.1 # MSRV
                 os:
                     - windows
                     - ubuntu
@@ -75,7 +83,7 @@ jobs:
                       logo: ubuntu
                     - os: macos
                       logo: apple
-                    - rust: 1.70.0 # MSRV
+                    - rust: 1.74.1 # MSRV
                       label: msrv
                     - rust: stable
                       label: stable
@@ -87,41 +95,60 @@ jobs:
             - name: Harden Runner
               uses: step-security/harden-runner@4d991eb9b905ef189e4c376166672c3f2f230481 # v2.11.0
               with:
-                egress-policy: audit
-            - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+                disable-sudo: true
+                egress-policy: block
+                allowed-endpoints: >
+                    github.com:443
+                    api.github.com:443
+                    static.rust-lang.org:443
+                    cdn.fwupd.org:443
+                    index.crates.io:443
+                    static.crates.io:443
+
+            - name: Checkout Repository
+              uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+
             - name: Install Rust
               if: ${{ needs.check_changed_dirs.outputs.source_changed == 'true' }}
               uses: dtolnay/rust-toolchain@56f84321dbccf38fb67ce29ab63e4754056677e0 # master
               with:
                 toolchain: ${{matrix.rust}}
                 components: rustfmt, clippy
+
             - name: Install nightly Rust
               if: ${{ needs.check_changed_dirs.outputs.source_changed == 'true' }}
               uses: dtolnay/rust-toolchain@56f84321dbccf38fb67ce29ab63e4754056677e0 # nightly
               with:
                 toolchain: nightly
                 components: rustfmt, clippy
+
             - name: Cache dependencies
               if: ${{ needs.check_changed_dirs.outputs.source_changed == 'true' }}
               uses: Swatinem/rust-cache@9d47c6ad4b02e050fd481d890b2ea34778fd09d6 # v2.7.8
+
             - name: Cargo Build
               if: ${{ needs.check_changed_dirs.outputs.source_changed == 'true' }}
               run: cargo build --verbose
+
             - name: Cargo Test
               if: ${{ needs.check_changed_dirs.outputs.source_changed == 'true' }}
               run: cargo test
+
             - name: Cargo Format
               if: ${{ needs.check_changed_dirs.outputs.source_changed == 'true' }}
               run: cargo +nightly fmt --all -- --check
+
             - name: Cargo Lint
               if: ${{ needs.check_changed_dirs.outputs.source_changed == 'true' }}
               run: cargo clippy -- -D warnings
+
             - name: Wait before badge creation
               if: ${{ needs.check_changed_dirs.outputs.source_changed == 'true' }}
               uses: AliSajid/random-wait-action@61cd084eea9edc3700d94b6c8e1bf28291f0a177 # v2.9.0
               with:
                 minimum: ${{env.MINIMUM_WAIT}}
                 maximum: ${{env.MAXIMUM_WAIT}}
+
             - name: Create Awesome Badge - Success
               uses: schneegans/dynamic-badges-action@e9a478b16159b4d31420099ba146cdc50f134483 # v1.7.0
               if: success()
@@ -133,6 +160,7 @@ jobs:
                 namedLogo: ${{matrix.logo}}
                 message: Succeeded
                 color: green
+
             - name: Create Awesome Badge - Failure
               uses: schneegans/dynamic-badges-action@e9a478b16159b4d31420099ba146cdc50f134483 # v1.7.0
               if: failure()
@@ -144,20 +172,24 @@ jobs:
                 label: Build
                 message: Failed
                 isError: true
+
             - name: Set Result
               if: always()
               id: result
               run: echo "result=${{job.status}}" >> "$GITHUB_OUTPUT"
+
     generate_code_coverage:
         uses: ./.github/workflows/code_coverage.yaml
         needs: [ci, check_changed_dirs]
         if: ${{needs.check_changed_dirs.outputs.source_changed == 'true'}}
         secrets: inherit # pragma: allowlist secret
+
     get-next-version:
         uses: ./.github/workflows/get_next_version.yaml
         needs: [ci, check_changed_dirs]
         if: ${{needs.ci.outputs.result == 'success'}}
         secrets: inherit # pragma: allowlist secret
+
     semantic-release:
         needs: [ci, get-next-version]
         if: ${{needs.get-next-version.outputs.new-release-published == 'true'}}
