@@ -543,7 +543,7 @@ pub const CLASSIC: [&str; 477] = [
 ///
 /// The `MODERN` array contains 105 different excuses, ensuring a wide variety
 /// of options to choose from.
-pub const MODERN: [&str; 105] = [
+pub const MODERN: [&str; 115] = [
     "Predictive analytics model failed to foresee this error",
     "AI heuristic malfunction",
     "Cryptocurrency mining drained system resources",
@@ -649,5 +649,15 @@ pub const MODERN: [&str; 105] = [
     "Cloud server is on fire, but it's in the cloud so we can't put it out",
     "Lambda function ran away from home",
     "Data lake is polluted with toxic data",
+    "The AI model is on a coffee break.",
+    "The blockchain is stuck in a fork.",
+    "The quantum computer is in a superposition of working and not working.",
+    "The serverless function got lost in the cloud.",
+    "The neural network is overfitting and refuses to generalize.",
+    "The IoT devices are having a group therapy session.",
+    "The data lake is experiencing a drought.",
+    "The Kubernetes cluster is having an identity crisis.",
+    "The microservices are too busy communicating with each other to handle requests.",
+    "The edge computing node fell off the edge of the network.",
     "iCloud is raining on the server",
 ];
