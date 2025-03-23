@@ -2633,7 +2633,7 @@ Apache License 2.0
 
 #### Used by
 
-- [gh-bofh-rs]( https://github.com/AliSajid/gh-bofh ) 1.2.1-next.2
+- [gh-bofh]( https://github.com/AliSajid/gh-bofh ) 1.2.2-next.1
 - [anes]( https://github.com/zrzka/anes-rs ) 0.1.6
 - [half]( https://github.com/starkat99/half-rs ) 2.5.0
 - [itoa]( https://github.com/dtolnay/itoa ) 1.0.15

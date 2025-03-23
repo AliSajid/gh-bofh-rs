@@ -4,7 +4,7 @@
 # SPDX-License-Identifier: MIT
 
 [package]
-name = "gh-bofh-rs"
+name = "gh-bofh"
 version = "1.2.2-next.1"
 edition = "2021"
 readme = "README.md"
